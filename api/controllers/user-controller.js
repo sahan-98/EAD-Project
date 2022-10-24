@@ -8,6 +8,7 @@ const HttpError = require('../models/http-error');
 const User = require('../schemas/user-schema');
 const config = require('../config.json');
 
+// authenticate
 const authenticate = async ({ email, password }) => {
     let user = null;
     try{
