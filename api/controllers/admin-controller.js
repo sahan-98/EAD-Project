@@ -1,6 +1,5 @@
 // const Admin = require('../schemas/fstation-schema');
 
-
 const countVehicleType = async (req, res) => {
     
     let FStationList = null;
