@@ -45,7 +45,6 @@ const countVehicleType = async (req, res) => {
                     --totalArivalThreewheels;
                 }
             }
-           
         }
         else if(station.fuelType === 'Diesel') {
             if(station.status === 'Arrived') {
