@@ -33,17 +33,6 @@ const countVehicleType = async (req, res) => {
                    totalArivalThreewheels++;
                }
             }
-            else if(station.status === 'Departed') {
-                if(user.VType === 'Bycicle') {
-                    --totalArivalBycicles;
-                }
-                else if((user.VType === 'Other Vehicle')) {
-                    --totalArivalOtherVehicles;
-                }
-                else if((user.VType === 'Threewheel')) {
-                    --totalArivalThreewheels;
-                }
-            }
            
         }
         else if(station.fuelType === 'Diesel') {
@@ -57,17 +46,6 @@ const countVehicleType = async (req, res) => {
                else if((user.VType === 'Bus')) {
                    totalArivalThreewheels++;
                }
-            }
-            else if(station.status === 'Departed') {
-                if(user.VType === 'Lorry') {
-                    --totalArivalBycicles;
-                }
-                else if((user.VType === 'Other Vehicle')) {
-                    --totalArivalOtherVehicles;
-                }
-                else if((user.VType === 'Bus')) {
-                    --totalArivalThreewheels;
-                }
             }
            
         }
@@ -89,15 +67,12 @@ const countVehicleType = async (req, res) => {
     
 
     res.status(200).send({ 
-        totalroleAttendee: totalroleAttendee,
-        totalroleResearcher: totalroleResearcher,
-        totalroleWorkshopPresenter: totalroleWorkshopPresenter,
-        totalAcceptedResearchPapers: totalAcceptedResearchPapers,
-        totalRejectedResearchPapers: totalRejectedResearchPapers,
-        totalPendingResearchPapers: totalPendingResearchPapers,
-        totalRejectedWorkshop: totalRejectedWorkshop,
-        totalAcceptedWorkshop: totalAcceptedWorkshop,
-        totalPendingWorkshop: totalPendingWorkshop
+        totalArivalBycicles: totalArivalBycicles,
+        totalArivalThreewheels: totalArivalThreewheels,
+        totalArivalOtherVehicles: totalArivalOtherVehicles,
+        totalArivalBycicles: totalArivalBycicles,
+        totalArivalOtherVehicles: totalArivalOtherVehicles,
+        totalArivalThreewheels: totalArivalThreewheels
     });
 
 } 
