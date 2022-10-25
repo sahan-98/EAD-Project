@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="Fuel_dropdown_name">vehicleTypes</string>
+    <string-array name="FuelTypes">
+        <item>Petrol</item>
+        <item>Diesel</item>
+    </string-array>
+</resources>
