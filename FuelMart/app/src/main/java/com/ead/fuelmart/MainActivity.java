@@ -1,5 +1,6 @@
 package com.ead.fuelmart;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.snackbar.Snackbar;
@@ -17,11 +18,31 @@ import com.ead.fuelmart.databinding.ActivityMainBinding;
 
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Spinner;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+
 
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
+
+    private String BASE_URL = "http://127.0.0.1:4000/";
+
+    Button SignInButton; // button which on clicking, sends the request
+    TextView DisplayText; // a text field to display the request response
+    EditText EmailDataField; // a text field where the data to be sent is entered
+    EditText PasswordDataField; // a text field where the data to be sent is entered
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,11 +51,26 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        setSupportActionBar(binding.toolbar);
+        SignInButton = (Button) findViewById(R.id.buttonSignIn);
+//        DisplayText = (EditText) findViewById(R.id.DataField);
+        EmailDataField = (EditText) findViewById(R.id.TextUserEmailAddress);
+        PasswordDataField = (EditText) findViewById(R.id.TextUserPassword);
 
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
-        appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
-        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+
+        findViewById(R.id.buttonSignUp1)
+                .setOnClickListener( v -> {
+                    Intent intent = new Intent(this,SignUpActivity.class);
+//                    intent.putExtra("name",'1');
+                    startActivity(intent);
+                });
+
+//        setSupportActionBar(binding.toolbar);
+
+//        Spinner spinnerVehicles=findViewById(R.id.VehicleTypeSpinner);
+
+//        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
+//        appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
+//        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
 
 //        binding.fab.setOnClickListener(new View.OnClickListener() {
 //            @Override
