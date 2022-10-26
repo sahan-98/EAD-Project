@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="location_province_dropdown_name">LocationProvince</string>
+    <string-array name="LocationProvince">
+        <item>Western Province</item>
+        <item>Southern Province</item>
+        <item>Uwa Province</item>
+        <item>Sabaragamu Province</item>
+
+    </string-array>
+</resources>

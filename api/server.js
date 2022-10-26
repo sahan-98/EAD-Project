@@ -13,6 +13,7 @@ require('dotenv').config({path: __dirname + '/.env'})
   *  routes *
     *    here */
 const UserRoutes = require('./routes/user-routes');
+const StationRoutes = require('./routes/station-routes');
 
 const MONGO_DB_PASSWORD = process.env['MONGO_DB_PASSWORD'];
 const connectionString = `mongodb+srv://EADProject:${MONGO_DB_PASSWORD}@ead.df5rgnq.mongodb.net/?retryWrites=true&w=majority`;
@@ -30,17 +31,11 @@ var hbs = require('nodemailer-express-handlebars');
 app.set('views', path.join(__dirname, 'views')) 
 app.set('view engine', 'ejs') 
 
-/* global *
-  *  error *
-    *    handler */
 app.use(errorHandler);
 
-/* add *
-  *  routes *
-    *    here */
-//app.use('/', UserRoutes);
 
 app.use('/api/v1/users/', UserRoutes);
+app.use('/api/v1/stations/', StationRoutes);
 
 mongoose
 .connect(connectionString)
