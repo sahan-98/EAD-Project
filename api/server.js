@@ -13,6 +13,7 @@ require('dotenv').config({path: __dirname + '/.env'})
   *  routes *
     *    here */
 const UserRoutes = require('./routes/user-routes');
+const AdminRoutes = require('./routes/admin-routes');
 
 const MONGO_DB_PASSWORD = process.env['MONGO_DB_PASSWORD'];
 const connectionString = `mongodb+srv://EADProject:${MONGO_DB_PASSWORD}@ead.df5rgnq.mongodb.net/?retryWrites=true&w=majority`;
@@ -41,6 +42,7 @@ app.use(errorHandler);
 //app.use('/', UserRoutes);
 
 app.use('/api/v1/users/', UserRoutes);
+app.use('/api/v1/admin/', AdminRoutes);
 
 mongoose
 .connect(connectionString)

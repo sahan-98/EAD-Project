@@ -1,66 +1,55 @@
-// const Admin = require('../schemas/fstation-schema');
+const Admin = require('../schemas/station_user');
 
 const countVehicleType = async (req, res) => {
     
-    let FStationList = null;
-    try{
-        FStationList = await Admin.find({}, function(err, result) {
-            if (err) {
-              console.log(err);
-            } else {
-              
-            }
-          });
-    } catch(err) {
-        return err;
-    }
+    const UserStationList = []
+    console.log("countVehicleType started")
+
+    UserStationList = await Admin.find({})
+    .then(data => {
+      res.status(200).send({ data: data });
+    })
+    .catch(error => {
+      res.status(500).send({ error: error.message });
+    });
+
+    console.log(UserStationList)
+    
     
     let totalArivalBycicles = 0;
     let totalArivalOtherVehicles  = 0;
     let totalArivalThreewheels = 0;
     
 
-    userList.map(station => {
-       if(station.fuelType === 'Petrol') {
-            if(station.status === 'Arrived') {
-               if(user.VType === 'Bycicle') {
+    UserStationList.map(station => {
+       if(station.user.fuelType === 'Petrol') {
+            if(station.arrivalStatus === 'true') {
+               if(station.user.vehicleType === 'Bycicle') {
                    totalArivalBycicles++;
                }
-               else if((user.VType === 'Other Vehicle')) {
+               else if((station.user.vehicleType === 'Other Vehicle')) {
                    totalArivalOtherVehicles++;
                }
-               else if((user.VType === 'Threewheel')) {
+               else if((station.user.vehicleType === 'Threewheel')) {
                    totalArivalThreewheels++;
                }
             }
            
         }
-        else if(station.fuelType === 'Diesel') {
-            if(station.status === 'Arrived') {
-               if(user.VType === 'Lorry') {
+        else if(station.user.fuelType === 'Diesel') {
+            if(station.arrivalStatus === 'Arrived') {
+               if(station.user.vehicleType === 'Lorry') {
                    totalArivalBycicles++;
                }
-               else if((user.VType === 'Other Vehicle')) {
+               else if((station.user.vehicleType === 'Other Vehicle')) {
                    totalArivalOtherVehicles++;
                }
-               else if((user.VType === 'Bus')) {
+               else if((station.user.vehicleType === 'Bus')) {
                    totalArivalThreewheels++;
                }
             }
            
         }
-        // else if(user.role === 'Workshop Presenter'){
-        //     totalroleWorkshopPresenter++;
-        //     if(user.document.docStatus === 'Rejected') {
-        //         totalRejectedWorkshop++;
-        //     }
-        //     else if(user.document.docStatus === 'Accepted') {
-        //         totalAcceptedWorkshop++;
-        //     }
-        //     else if(user.document.docStatus === 'Pending') {
-        //         totalPendingWorkshop++;
-        //     }
-        // }
         
     });
     
@@ -75,4 +64,12 @@ const countVehicleType = async (req, res) => {
         totalArivalThreewheels: totalArivalThreewheels
     });
 
+    console.log(res.totalArivalOtherVehicles)
+
 } 
+
+
+
+module.exports = {
+    countVehicleType
+};
