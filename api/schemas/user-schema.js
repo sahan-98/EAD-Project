@@ -7,8 +7,7 @@ const userSchema = new mongoose.Schema({
     password: { type: String, required: [true, 'Passowrd is required'] },
     vehicleType: { type: String, required: [true, 'Vehicle Type is required'] },
     vehicleNumber: { type: String, required: [true, 'Vehicle Number is required'] },
-    engineCapacity: {type: String, required: [true, 'Engine Capacity is required']},
-    registeredDate: {type: String, required: [true, 'Registered Date is required']}
+    fuelType: {type: String, required: [true, 'Fuel Type is required']},
 })
 
 module.exports =  mongoose.model('User', userSchema);

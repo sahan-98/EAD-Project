@@ -37,12 +37,10 @@ public class MainActivity extends AppCompatActivity {
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
 
-    private String BASE_URL = "http://127.0.0.1:4000/";
-
-    Button SignInButton; // button which on clicking, sends the request
-    TextView DisplayText; // a text field to display the request response
-    EditText EmailDataField; // a text field where the data to be sent is entered
-    EditText PasswordDataField; // a text field where the data to be sent is entered
+    Button SignInButton;
+    TextView DisplayText;
+    EditText EmailDataField;
+    EditText PasswordDataField;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,51 +49,33 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        SignInButton = (Button) findViewById(R.id.buttonSignIn);
-//        DisplayText = (EditText) findViewById(R.id.DataField);
-        EmailDataField = (EditText) findViewById(R.id.TextUserEmailAddress);
-        PasswordDataField = (EditText) findViewById(R.id.TextUserPassword);
 
-
-        findViewById(R.id.buttonSignUp1)
+        findViewById(R.id.buttonVehicleOwner)
                 .setOnClickListener( v -> {
-                    Intent intent = new Intent(this,SignUpActivity.class);
-//                    intent.putExtra("name",'1');
+                    Intent intent = new Intent(this,SignInActivity.class);
                     startActivity(intent);
                 });
 
-//        setSupportActionBar(binding.toolbar);
+        findViewById(R.id.buttonStationMaster)
+                .setOnClickListener( v -> {
+                    Intent intent = new Intent(this,AdminSignInActivity.class);
+                    startActivity(intent);
+                });
 
-//        Spinner spinnerVehicles=findViewById(R.id.VehicleTypeSpinner);
 
-//        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
-//        appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
-//        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
-
-//        binding.fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//            }
-//        });
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
+
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
         }
