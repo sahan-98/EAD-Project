@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vehicle_dropdown_name">vehicleTypes</string>
+    <string-array name="VehicleTypes">
+        <item>Car</item>
+        <item>Van</item>
+        <item>Lorry</item>
+        <item>Motor Bycycle</item>
+        <item>Three Wheel</item>
+        <item>Bus</item>
+    </string-array>
+</resources>
