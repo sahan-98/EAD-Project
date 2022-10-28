@@ -31,7 +31,6 @@ app.set('view engine', 'ejs')
 
 app.use(errorHandler);
 
-
 app.use('/api/v1/users/', UserRoutes);
 app.use('/api/v1/admin/', AdminRoutes);
 app.use('/api/v1/stations', stationRoutes);
