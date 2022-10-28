@@ -49,5 +49,11 @@ public class SignInActivity extends AppCompatActivity {
                     Intent intent = new Intent(this,SignUpActivity.class);
                     startActivity(intent);
                 });
+
+        findViewById(R.id.buttonSignIn1)
+                .setOnClickListener(v -> {
+                    Intent intent = new Intent(this,FilterPage.class);
+                    startActivity(intent);
+                });
     }
 }

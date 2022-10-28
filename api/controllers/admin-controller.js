@@ -1,13 +1,13 @@
-const Admin = require('../schemas/station_user');
+const Station_user = require('../schemas/station_user');
 
 const countVehicleType = async (req, res) => {
-    
+    const stationId = req.params.stationId
     const UserStationList = []
     console.log("countVehicleType started")
 
-    UserStationList = await Admin.find({})
+    Station_user.find({ stationId })
     .then(data => {
-      res.status(200).send({ data: data });
+      res.status(200).send({ UserStationList: data });
     })
     .catch(error => {
       res.status(500).send({ error: error.message });

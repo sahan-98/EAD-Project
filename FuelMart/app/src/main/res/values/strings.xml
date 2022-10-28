@@ -15,16 +15,16 @@
     <string name="signUp_text">Don\'t you have an account ?</string>
     <string name="title_activity_sign_up">SignUpActivity</string>
 
-    <string-array name="provinces">
-        <item>Western</item>
-        <item>Southern</item>
-        <item>Eastern</item>
-        <item>Central</item>
-        <item>North Western</item>
-        <item>North Central</item>
-        <item>Uva</item>
-        <item>Sabaragamuwa</item>
-    </string-array>
+<!--    <string-array name="provinces">-->
+<!--        <item>Western</item>-->
+<!--        <item>Southern</item>-->
+<!--        <item>Eastern</item>-->
+<!--        <item>Central</item>-->
+<!--        <item>North Western</item>-->
+<!--        <item>North Central</item>-->
+<!--        <item>Uva</item>-->
+<!--        <item>Sabaragamuwa</item>-->
+<!--    </string-array>-->
 
     <string-array name="WesternDistricts">
         <item>Colombo</item>
@@ -32,9 +32,18 @@
         <item>Kaluthara</item>
     </string-array>
 
-    <string-array name="SouthernDistricts">
-        <item>Matara</item>
-        <item>Galle</item>
-        <item>Hambanthota</item>
+    <string-array name="GampahaTowm">
+        <item>Gampaha</item>
+        <item>Kadawatha</item>
+        <item>Kaleniya</item>
+    </string-array>
+
+    <string-array name="ColomboTowm">
+        <item>Homagama</item>
+        <item>Malabe</item>
+        <item>Colombo 10</item>
+        <item>Godagama</item>
+        <item>Kaduwela</item>
+        <item>Colombo 11</item>
     </string-array>
 </resources>
