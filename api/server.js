@@ -14,7 +14,7 @@ const AdminRoutes = require('./routes/admin-routes');
 const stationRoutes = require('./routes/station-routes')
 
 const MONGO_DB_PASSWORD = process.env['MONGO_DB_PASSWORD'];
-const connectionString = `mongodb+srv://EADProject:${MONGO_DB_PASSWORD}@ead.df5rgnq.mongodb.net/?retryWrites=true&w=majority`;
+const connectionString = `mongodb+srv://EADProject:EADProject2022@ead.df5rgnq.mongodb.net/?retryWrites=true&w=majority`;
 
 app = express(),
 port = process.env.PORT || 4000;
