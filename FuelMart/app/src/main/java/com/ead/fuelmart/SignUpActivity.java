@@ -53,6 +53,7 @@ public class SignUpActivity extends AppCompatActivity implements AdapterView.OnI
         spinnerVehicleType.setOnItemSelectedListener(this);
 
 
+
         name = (EditText) findViewById(R.id.TextUserName);
         email = (EditText) findViewById(R.id.TextUserEmailAddress1);
         password = (EditText) findViewById(R.id.TextUserPassword1);
