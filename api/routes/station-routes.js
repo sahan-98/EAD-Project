@@ -1,8 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const controller = require('../controllers/station-controller')
 
-const { saveStation, authenticateStation } = require('../controllers/station-controller');
+const { saveStation, authenticateStation,getAllStationsByLocation,getStationByID } = require('../controllers/station-controller');
 
 const auth = (req, res, next) => {
     authenticateStation(req.body)
@@ -12,7 +11,7 @@ const auth = (req, res, next) => {
 
 router.post('/auth', [], auth);
 router.post('/signup', [], saveStation);
-router.get('/:district/:city', controller.getAllStationsByLocation);
-router.get('/:id', controller.getStationByID);
+router.get('/:district/:city',[], getAllStationsByLocation);
+router.get('/:id',[], getStationByID);
 
 module.exports = router;

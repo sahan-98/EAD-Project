@@ -7,7 +7,6 @@ const { uuid } = require('uuidv4');
 const HttpError = require('../models/http-error');
 const Station = require('../schemas/station-schema');
 const config = require('../config.json');
-const { countDocuments } = require('../schemas/station-schema');
 
 const authenticateStation = async ({ stationName, password }) => {
     let station = null;
@@ -44,7 +43,6 @@ const saveStation = async (req, res, next) => {
     }
 
     const { 
-        stationid,  
         stationName,
         password,
         province,
@@ -115,8 +113,11 @@ const saveStation = async (req, res, next) => {
 };
 
 const getAllStationsByLocation = async (req, res) => {
-  const district = req.paeams.district;
+  const district = req.params.district;
   const city = req.params.city;
+
+  console.log(district)
+  console.log(city)
 
   await Station.find({
     district: new RegExp('\\b' + district + '\\b', 'i'),
@@ -125,23 +126,25 @@ const getAllStationsByLocation = async (req, res) => {
     .then(data => {
       res.status(200).send({ data: data});
     })
-    .catch.status(500).send({ error : error.message});
+    .catch(err => {
+      res.status(500).send({ message: "Error retrieving fuel station with district " + district + " & city " + city });
+  });
 }
 
 
 const getStationByID = async (req, res) => {
-  const stationid = req.params.stationid;
+  const stationid = req.params.id;
 
   Station.findOne({ stationid })
       .then(data => {
           if (!data) {
-              res.status(404).send({ message: "Station not found. Check ID: " + stationid });
+              res.status(404).send({ message: "Fuel station not found. Check ID: " + stationid });
           } else {
               res.status(200).send({ data: data });
           }
       })
       .catch(err => {
-          res.status(500).send({ message: "Error retrieving shed with ID:" + stationid });
+          res.status(500).send({ message: "Error retrieving fuel station with ID:" + stationid });
       });
 }
 

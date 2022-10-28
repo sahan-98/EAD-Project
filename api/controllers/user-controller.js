@@ -110,5 +110,23 @@ const saveUser = async (req, res, next) => {
     res.status(201).json({ User: saveUser });
 };
 
+const getUserByID = async (req, res) => {
+  const userid = req.params.id;
+  console.log(userid)
+
+  User.findOne({ userid })
+      .then(data => {
+          if (!data) {
+              res.status(404).send({ message: "User not found. Check ID: " + userid });
+          } else {
+              res.status(200).send({ data: data });
+          }
+      })
+      .catch(err => {
+          res.status(500).send({ message: "Error retrieving User with ID:" + userid });
+      });
+}
+
 exports.authenticate = authenticate;
 exports.saveUser = saveUser;
+exports.getUserByID = getUserByID;

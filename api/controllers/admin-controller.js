@@ -1,7 +1,7 @@
 const Station_user = require('../schemas/station_user');
 
 const countVehicleType = async (req, res) => {
-    const stationId = req.params.stationId
+    const stationId = req.params.id
     const UserStationList = []
     console.log("countVehicleType started")
 
