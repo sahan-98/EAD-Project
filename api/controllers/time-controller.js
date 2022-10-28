@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const HttpError = require('../helpers/http.error');
 const userStation = require('../schemas/station_user');
 
+//Get average time per vehicle
 const getAvgWaitingTime = async (req, res) =>{
     const stationId = req.params.stationId;
     userStation.find({ stationId, arrivalStatus: false}, {arrivalTime: 1, depatTime: 1, _id: 0})

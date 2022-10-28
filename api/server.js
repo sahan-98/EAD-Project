@@ -9,9 +9,6 @@ const errorHandler = require('./_helpers/error-handler');
 
 require('dotenv').config({path: __dirname + '/.env'})
 
-/* import *
-  *  routes *
-    *    here */
 const UserRoutes = require('./routes/user-routes');
 const AdminRoutes = require('./routes/admin-routes');
 const stationRoutes = require('./routes/station-routes')
@@ -32,15 +29,8 @@ var hbs = require('nodemailer-express-handlebars');
 app.set('views', path.join(__dirname, 'views')) 
 app.set('view engine', 'ejs') 
 
-/* global *
-  *  error *
-    *    handler */
 app.use(errorHandler);
 
-/* add *
-  *  routes *
-    *    here */
-//app.use('/', UserRoutes);
 
 app.use('/api/v1/users/', UserRoutes);
 app.use('/api/v1/admin/', AdminRoutes);

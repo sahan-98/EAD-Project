@@ -9,8 +9,7 @@ const Station = require('../schemas/station-schema');
 const config = require('../config.json');
 const { countDocuments } = require('../schemas/station-schema');
 
-// authenticate
-const authenticateStation = async ({ email, password }) => {
+const authenticateStation = async ({ stationName, password }) => {
     let station = null;
     try{
         station = await Station.findOne({ stationName: stationName });
@@ -51,10 +50,10 @@ const saveStation = async (req, res, next) => {
         province,
         district,
         town,
-        disel,
-        diselArrivedTime,
-        diselFinishedTime,
-        diselQuantity,
+        diesel,
+        dieselArrivedTime,
+        dieselFinishedTime,
+        dieselQuantity,
         petrol,
         petrolArrivedTime,
         petrolFinishedTime,
@@ -63,7 +62,7 @@ const saveStation = async (req, res, next) => {
 
     let existingStation;
     try{
-      existingStation = await User.findOne({ email: email});
+      existingStation = await Station.findOne({ stationName: stationName});
     } catch(err) {
       const error = new HttpError(
         'Something went wrong, could not sign up.',
@@ -82,17 +81,17 @@ const saveStation = async (req, res, next) => {
 
     const hashedPassword = await bcrypt.hash(password, 10);
     console.log(hashedPassword);
-    const newStation = new User({
+    const newStation = new Station({
         stationid: uuid(),  
         stationName,
         password,
         province,
         district,
         town,
-        disel,
-        diselArrivedTime,
-        diselFinishedTime,
-        diselQuantity,
+        diesel,
+        dieselArrivedTime,
+        dieselFinishedTime,
+        dieselQuantity,
         petrol,
         petrolArrivedTime,
         petrolFinishedTime,
@@ -112,8 +111,7 @@ const saveStation = async (req, res, next) => {
         return next(error);
     }
 
-    res.status(201).json({ User: saveStation });
-
+    res.status(201).json({ Station: saveStation });
 };
 
 const getAllStationsByLocation = async (req, res) => {

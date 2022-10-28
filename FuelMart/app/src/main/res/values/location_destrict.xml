@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="location_district_dropdown_name">LocationDistrict</string>
+    <string-array name="LocationDistrict">
+        <item>Colombo</item>
+        <item>Gampaha</item>
+        <item>Kaluthara</item>
+    </string-array>
+</resources>

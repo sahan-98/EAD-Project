@@ -8,7 +8,6 @@ const HttpError = require('../models/http-error');
 const User = require('../schemas/user-schema');
 const config = require('../config.json');
 
-// authenticate
 const authenticate = async ({ email, password }) => {
     let user = null;
     try{
@@ -43,7 +42,7 @@ const saveUser = async (req, res, next) => {
         return next(new HttpError('Invalid inputs! Please check again.', 422));
     }
 
-    const { name, email, password, vehicleType, vehicleNumber, engineCapacity, registeredDate } = req.body;
+    const { name, email, password, vehicleType, vehicleNumber, fuelType } = req.body;
 
     let existingUser;
     try{
@@ -92,8 +91,7 @@ const saveUser = async (req, res, next) => {
         password,
         vehicleType,
         vehicleNumber,
-        engineCapacity,
-        registeredDate: new Date()
+        fuelType
     });
 
     try {
