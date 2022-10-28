@@ -10,54 +10,70 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.Spinner;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 
 public class FilterPage extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
 
-    private Spinner spinner_province;
-    private Spinner spinner_district;
-//    private ArrayAdapter<String> adapterDistrict,adapterCity;
 
-    private Button AddButton; // button which on clicking, sends the request
+    private Spinner spinner_district;
+    private Spinner spinner_town;
+    private ListView listView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.filter_page);
-        spinner_province = findViewById(R.id.spinnerProvince);
+        spinner_district = findViewById(R.id.spinnerDistrict);
 
-        AddButton = findViewById(R.id.buttonDetails);
 
         ActionBar actionBar;
         actionBar = getSupportActionBar();
 
-        // Define ColorDrawable object and parse color
-        // using parseColor method
-        // with color hash code as its parameter
         ColorDrawable colorDrawable
                 = new ColorDrawable(Color.parseColor("#0F9D58"));
         actionBar.setBackgroundDrawable(colorDrawable);
 
-        findViewById(R.id.buttonDetails)
-                .setOnClickListener( v -> {
-                    Intent intent = new Intent(this,DetailsPage.class);
-//                    intent.putExtra("name",'1');
-                    startActivity(intent);
-                });
 
 
+        ArrayAdapter<CharSequence> Dadapter = ArrayAdapter.createFromResource(this,R.array.WesternDistricts, android.R.layout.simple_spinner_item);
+        Dadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner_district.setAdapter(Dadapter);
+        spinner_district.setOnItemSelectedListener(this);
 
 
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.provinces, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner_province.setAdapter(adapter);
-        spinner_province.setOnItemSelectedListener(this);
+        listView = (ListView) findViewById(R.id.listView);
+        ArrayList<String> stationList =  new ArrayList<>();
+
+        stationList.add("dsdsd");
+        stationList.add("fdgg");
+        stationList.add("dsdgfgdfsd");
+        stationList.add("dsgdfgdsd");
+        stationList.add("dsgdfgdsd");
+        stationList.add("dsgdfgdsd");
+        stationList.add("dsgdfgdsd");
 
 
+        ArrayAdapter arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1,stationList);
+        listView.setAdapter(arrayAdapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                Intent intent = new Intent(FilterPage.this,DetailsPage.class);
+                startActivity(intent);
+
+                Toast.makeText(FilterPage.this,"clicked item:" +i+ " " + stationList.get(i).toString(), Toast.LENGTH_SHORT).show();
+            }
+        });
 
     }
 
@@ -66,18 +82,18 @@ public class FilterPage extends AppCompatActivity implements AdapterView.OnItemS
         String choice = adapterView.getItemAtPosition(i).toString();
         String province = adapterView.getItemAtPosition(i).toString();
 
-        if (province.equals("Western")) {
-            spinner_district = findViewById(R.id.spinnerDistrict);
+        if (province.equals("Colombo")) {
+            spinner_town = findViewById(R.id.spinnerTown);
 
-            ArrayAdapter<CharSequence> Dadapter = ArrayAdapter.createFromResource(this, R.array.WesternDistricts, android.R.layout.simple_spinner_item);
-            Dadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-            spinner_district.setAdapter(Dadapter);
-        }else if (province.equals("Southern")) {
-            spinner_district = findViewById(R.id.spinnerDistrict);
+            ArrayAdapter<CharSequence> Tadapter = ArrayAdapter.createFromResource(this, R.array.ColomboTowm, android.R.layout.simple_spinner_item);
+            Tadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            spinner_town.setAdapter(Tadapter);
+        }else if (province.equals("Gampaha")) {
+            spinner_town = findViewById(R.id.spinnerTown);
 
-            ArrayAdapter<CharSequence> Dadapter = ArrayAdapter.createFromResource(this, R.array.SouthernDistricts, android.R.layout.simple_spinner_item);
-            Dadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-            spinner_district.setAdapter(Dadapter);
+            ArrayAdapter<CharSequence> Tadapter = ArrayAdapter.createFromResource(this, R.array.GampahaTowm, android.R.layout.simple_spinner_item);
+            Tadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            spinner_town.setAdapter(Tadapter);
         }
 
         Toast.makeText(getApplicationContext(), choice, Toast.LENGTH_LONG).show();

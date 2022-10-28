@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
     private String BASE_URL = "http://127.0.0.1:4000/";
 
-    Button SignInButton; // button which on clicking, sends the request
+//    Button SignInButton; // button which on clicking, sends the request
     TextView DisplayText; // a text field to display the request response
     EditText EmailDataField; // a text field where the data to be sent is entered
     EditText PasswordDataField; // a text field where the data to be sent is entered
@@ -51,10 +51,17 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        SignInButton = (Button) findViewById(R.id.buttonSignIn);
+//        SignInButton = (Button) findViewById(R.id.buttonSignIn);
 //        DisplayText = (EditText) findViewById(R.id.DataField);
         EmailDataField = (EditText) findViewById(R.id.TextUserEmailAddress);
         PasswordDataField = (EditText) findViewById(R.id.TextUserPassword);
+
+        findViewById(R.id.buttonSignIn)
+                .setOnClickListener( v -> {
+                    Intent intent = new Intent(this,FilterPage.class);
+//                    intent.putExtra("name",'1');
+                    startActivity(intent);
+                });
 
 
         findViewById(R.id.buttonSignUp1)

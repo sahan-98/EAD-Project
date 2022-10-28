@@ -7,6 +7,7 @@ const { uuid } = require('uuidv4');
 const HttpError = require('../models/http-error');
 const Station = require('../schemas/station-schema');
 const config = require('../config.json');
+const { countDocuments } = require('../schemas/station-schema');
 
 // authenticate
 const authenticateStation = async ({ email, password }) => {
@@ -112,7 +113,41 @@ const saveStation = async (req, res, next) => {
     }
 
     res.status(201).json({ User: saveStation });
+
 };
+
+const getAllStationsByLocation = async (req, res) => {
+  const district = req.paeams.district;
+  const city = req.params.city;
+
+  await Station.find({
+    district: new RegExp('\\b' + district + '\\b', 'i'),
+    city: new RegExp('\\b' + city + '\\b', 'i')
+  })
+    .then(data => {
+      res.status(200).send({ data: data});
+    })
+    .catch.status(500).send({ error : error.message});
+}
+
+
+const getStationByID = async (req, res) => {
+  const stationid = req.params.stationid;
+
+  Station.findOne({ stationid })
+      .then(data => {
+          if (!data) {
+              res.status(404).send({ message: "Station not found. Check ID: " + stationid });
+          } else {
+              res.status(200).send({ data: data });
+          }
+      })
+      .catch(err => {
+          res.status(500).send({ message: "Error retrieving shed with ID:" + stationid });
+      });
+}
 
 exports.authenticateStation = authenticateStation;
 exports.saveStation = saveStation;
+exports.getAllStationsByLocation = getAllStationsByLocation;
+exports.getStationByID = getStationByID;

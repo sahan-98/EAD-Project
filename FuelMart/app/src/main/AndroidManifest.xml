@@ -20,6 +20,13 @@
                 android:value="" />
         </activity>
         <activity
+            android:name=".FilterPage"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".SignUpActivity"
             android:exported="false"
             android:label="@string/title_activity_sign_up"
