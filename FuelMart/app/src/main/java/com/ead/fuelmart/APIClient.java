@@ -16,7 +16,7 @@ class APIClient {
         OkHttpClient client = new OkHttpClient.Builder().addInterceptor(interceptor).build();
 
         retrofit = new Retrofit.Builder()
-                .baseUrl("http://10.0.2.2:4000")
+                .baseUrl("http://127.0.0.1:4000/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(client)
                 .build();
