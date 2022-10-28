@@ -7,7 +7,6 @@ const { uuid } = require('uuidv4');
 const HttpError = require('../models/http-error');
 const Station = require('../schemas/station-schema');
 const config = require('../config.json');
-const { countDocuments } = require('../schemas/station-schema');
 
 const authenticateStation = async ({ stationName, password }) => {
     let station = null;
@@ -44,7 +43,6 @@ const saveStation = async (req, res, next) => {
     }
 
     const { 
-        stationid,  
         stationName,
         password,
         province,
@@ -130,7 +128,7 @@ const getAllStationsByLocation = async (req, res) => {
 
 
 const getStationByID = async (req, res) => {
-  const stationid = req.params.stationid;
+  const stationid = req.params.id;
 
   Station.findOne({ stationid })
       .then(data => {
