@@ -7,6 +7,7 @@ const { uuid } = require('uuidv4');
 const HttpError = require('../models/http-error');
 const User = require('../schemas/user-schema');
 const config = require('../config.json');
+const sendEmail = require("../utils/email");
 
 const authenticate = async ({ email, password }) => {
     let user = null;
@@ -47,6 +48,8 @@ const saveUser = async (req, res, next) => {
     let existingUser;
     try{
       existingUser = await User.findOne({ email: email});
+
+      res.send("An Email sent to your account please verify");
     } catch(err) {
       const error = new HttpError(
         'Something went wrong, could not sign up.',
@@ -98,6 +101,7 @@ const saveUser = async (req, res, next) => {
         const session = await mongoose.startSession();
         session.startTransaction();
         await newUser.save({ session: session });
+
         await session.commitTransaction();
     } catch (err) {
         const error = new HttpError(
@@ -106,6 +110,8 @@ const saveUser = async (req, res, next) => {
         );
         return next(error);
     }
+    // const message = "Please Chech Your Email."
+    // await sendEmail(newUser.email, "Verify Email", message);
 
     res.status(201).json({ User: saveUser });
 };

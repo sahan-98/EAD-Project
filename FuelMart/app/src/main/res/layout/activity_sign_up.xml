@@ -32,136 +32,163 @@
         app:layout_constraintTop_toTopOf="parent"
         app:popupTheme="@style/Theme.FuelMart.PopupOverlay" />
 
-    <EditText
-        android:id="@+id/TextUserName"
-        android:layout_width="331dp"
-        android:layout_height="48dp"
-        android:background="@drawable/edit_text_border"
-        android:ems="10"
-        android:hint=" Name"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="415dp"
+        android:layout_height="681dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp"
+        app:cardMaxElevation="12dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.472"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/appBarLayout2"
-        app:layout_constraintVertical_bias="0.188" />
+        app:layout_constraintVertical_bias="0.488"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="-4dp">
 
-    <EditText
-        android:id="@+id/TextVehicleNumber"
-        android:layout_width="331dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/edit_text_border"
-        android:ems="10"
-        android:hint=" Vehicle Number"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.475"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/appBarLayout2"
-        app:layout_constraintVertical_bias="0.682" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="373dp"
+            android:layout_height="642dp">
 
-    <EditText
-        android:id="@+id/TextUserEmailAddress1"
-        android:layout_width="331dp"
-        android:layout_height="48dp"
-        android:background="@drawable/edit_text_border"
-        android:ems="10"
-        android:hint=" Email"
-        android:inputType="textEmailAddress"
-        android:minHeight="48dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/appBarLayout2"
-        app:layout_constraintVertical_bias="0.282" />
+            <EditText
+                android:id="@+id/TextUserName"
+                android:layout_width="331dp"
+                android:layout_height="48dp"
+                android:background="@drawable/edit_text_border"
+                android:ems="10"
+                android:hint=" Name"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.541"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.126" />
 
-    <EditText
-        android:id="@+id/TextUserPassword1"
-        android:layout_width="331dp"
-        android:layout_height="54dp"
-        android:background="@drawable/edit_text_border"
-        android:ems="10"
-        android:hint=" Password"
-        android:inputType="textPassword"
-        android:minHeight="48dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.378" />
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="308dp"
+                android:layout_height="29dp"
+                android:fontFamily="monospace"
+                android:text="Register Your Vehicle"
+                android:textAlignment="center"
+                android:textColor="#FF9800"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.578"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.033" />
 
-    <EditText
-        android:id="@+id/TextUserRePassword"
-        android:layout_width="331dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/edit_text_border"
-        android:ems="10"
-        android:hint=" Re-Enter Password"
-        android:inputType="textPassword"
-        android:minHeight="48dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.472"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.48" />
+            <Button
+                android:id="@+id/buttonSignUp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#FF9800"
+                android:text="Sign Up"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.952" />
 
-    <Spinner
-        android:id="@+id/spinnerFuelType"
-        android:layout_width="331dp"
-        android:layout_height="50dp"
-        android:background="@drawable/edit_text_border"
-        android:entries="@array/FuelTypes"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.475"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.781" />
+            <Spinner
+                android:id="@+id/spinnerVehicleType"
+                android:layout_width="331dp"
+                android:layout_height="50dp"
+                android:background="@drawable/edit_text_border"
+                android:entries="@array/VehicleTypes"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.466"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.603" />
 
-    <Spinner
-        android:id="@+id/spinnerVehicleType"
-        android:layout_width="331dp"
-        android:layout_height="50dp"
-        android:background="@drawable/edit_text_border"
-        android:entries="@array/VehicleTypes"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.482"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.58" />
+            <Spinner
+                android:id="@+id/spinnerFuelType"
+                android:layout_width="331dp"
+                android:layout_height="50dp"
+                android:background="@drawable/edit_text_border"
+                android:entries="@array/FuelTypes"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.466"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.849" />
 
-    <Button
-        android:id="@+id/buttonSignUp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="68dp"
-        android:backgroundTint="#FF9800"
-        android:text="Sign Up"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+            <EditText
+                android:id="@+id/TextUserRePassword"
+                android:layout_width="331dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_text_border"
+                android:ems="10"
+                android:hint=" Re-Enter Password"
+                android:inputType="textPassword"
+                android:minHeight="48dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.482" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="308dp"
-        android:layout_height="29dp"
-        android:fontFamily="monospace"
-        android:text="Register Your Vehicle"
-        android:textColor="#FF9800"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.699"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.109" />
+            <EditText
+                android:id="@+id/TextUserPassword1"
+                android:layout_width="331dp"
+                android:layout_height="54dp"
+                android:background="@drawable/edit_text_border"
+                android:ems="10"
+                android:hint=" Password"
+                android:inputType="textPassword"
+                android:minHeight="48dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.479"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.366" />
+
+            <EditText
+                android:id="@+id/TextUserEmailAddress1"
+                android:layout_width="331dp"
+                android:layout_height="48dp"
+                android:background="@drawable/edit_text_border"
+                android:ems="10"
+                android:hint=" Email"
+                android:inputType="textEmailAddress"
+                android:minHeight="48dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.541"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.244" />
+
+            <EditText
+                android:id="@+id/TextVehicleNumber"
+                android:layout_width="331dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_text_border"
+                android:ems="10"
+                android:hint=" Vehicle Number"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.479"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.725" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

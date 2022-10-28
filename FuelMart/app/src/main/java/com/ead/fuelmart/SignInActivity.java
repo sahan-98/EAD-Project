@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.ead.fuelmart.databinding.ActivitySignInBinding;
 
@@ -44,6 +45,11 @@ public class SignInActivity extends AppCompatActivity {
         EmailDataField = (EditText) findViewById(R.id.TextUserEmailAddress);
         PasswordDataField = (EditText) findViewById(R.id.TextUserPassword);
 
+//        if (user.equals("")||pass.equals("")||rPass.equals("")||uEmail.equals("")||uVehicleNumber.equals("")) {
+//            Toast.makeText(SignUpActivity.this, "please Enter All The Fields", Toast.LENGTH_SHORT).show();
+//        }else{
+//
+//        }
         findViewById(R.id.buttonSignUp1)
                 .setOnClickListener( v -> {
                     Intent intent = new Intent(this,SignUpActivity.class);

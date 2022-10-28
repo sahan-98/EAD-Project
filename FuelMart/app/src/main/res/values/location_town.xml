@@ -1,4 +1,4 @@
-w<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="location_town_dropdown_name">LocationTown</string>
     <string-array name="LocationTown">

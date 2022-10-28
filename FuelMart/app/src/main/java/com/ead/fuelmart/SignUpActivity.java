@@ -34,6 +34,7 @@ public class SignUpActivity extends AppCompatActivity implements AdapterView.OnI
     Button SignUpButton;
     EditText name,password,rePass,email,vehicleType,vehicleNumber,fuelType;
     Spinner spinnerVehicleType, spinnerFuelType;
+    String vehicleTypeString;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +53,11 @@ public class SignUpActivity extends AppCompatActivity implements AdapterView.OnI
         spinnerVehicleType.setAdapter(adapter);
         spinnerVehicleType.setOnItemSelectedListener(this);
 
+        spinnerFuelType=findViewById(R.id.spinnerFuelType);
+        ArrayAdapter<CharSequence>adapterFuelType= ArrayAdapter.createFromResource(this, R.array.FuelTypes, android.R.layout.simple_spinner_item);
+        adapterFuelType.setDropDownViewResource(android.R.layout.simple_spinner_item);
+        spinnerFuelType.setAdapter(adapterFuelType);
+        spinnerFuelType.setOnItemSelectedListener(this);
 
 
         name = (EditText) findViewById(R.id.TextUserName);
@@ -69,6 +75,8 @@ public class SignUpActivity extends AppCompatActivity implements AdapterView.OnI
                 String pass = password.getText().toString();
                 String rPass = rePass.getText().toString();
                 String uVehicleNumber = vehicleNumber.getText().toString();
+                String vehicleType = vehicleTypeString;
+
 
                 if (user.equals("")||pass.equals("")||rPass.equals("")||uEmail.equals("")||uVehicleNumber.equals("")) {
                     Toast.makeText(SignUpActivity.this, "please Enter All The Fields", Toast.LENGTH_SHORT).show();
@@ -76,7 +84,7 @@ public class SignUpActivity extends AppCompatActivity implements AdapterView.OnI
                 else {
                     if (pass.equals(rPass)) {
 
-                        User userObj = new User(user, uEmail, pass, "car", uVehicleNumber, "petrol");
+                        User userObj = new User(user, uEmail, pass, vehicleType, uVehicleNumber, "petrol");
                         Call<User> call1 = apiInterface.createUser(userObj);
                         call1.enqueue(new Callback<User>() {
                             @Override
@@ -102,10 +110,11 @@ public class SignUpActivity extends AppCompatActivity implements AdapterView.OnI
     }
 
     @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        String text = parent.getItemAtPosition(position).toString();
-        Toast.makeText(parent.getContext(), text, Toast.LENGTH_SHORT).show();
+    public void onItemSelected(AdapterView<?> adapterView, View arg1, int i,long l) {
+        vehicleTypeString = adapterView.getItemAtPosition(i).toString();
+//        Toast.makeText(getApplicationContext(), vehicleTypeString, Toast.LENGTH_LONG).show();
     }
+
     @Override
     public void onNothingSelected(AdapterView<?> parent) { }
 

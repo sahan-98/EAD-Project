@@ -12,6 +12,12 @@ public interface APIInterface {
     @POST("/api/v1/users/signup")
     Call<User> createUser(@Body User user);
 
+//    @POST("/api/v1/users/signup")
+//    Call<User> AuthUser(@Body User user);
+//
+//    @GET("/api/v1/users/:id")
+//    Call<User> getUserById();
+
 //    @GET("/api/users?")
 //    Call<UserList> doGetUserList(@Query("page") String page);
 //
