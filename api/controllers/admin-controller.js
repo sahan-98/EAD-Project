@@ -23,7 +23,7 @@ const countVehicleType = async (req, res) => {
         UserStationList.map(station => {
             if(station.fuelType === 'Petrol') {
                  if(station.arrivalStatus === true) {
-                    if(station.vehicleType === 'bicycle') {
+                    if(station.vehicleType === 'Bcycle') {
                         totalArivalBycicles++;
                     }
                     else if((station.vehicleType === 'Other Vehicle')) {
