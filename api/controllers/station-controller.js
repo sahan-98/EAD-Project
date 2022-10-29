@@ -9,28 +9,25 @@ const Station = require('../schemas/station-schema');
 const config = require('../config.json');
 
 const authenticateStation = async ({ stationName, password }) => {
-    let station = null;
-    try{
-        station = await Station.findOne({ stationName: stationName });
-      } catch(err) {
-        const error = new HttpError(
-          'Something went wrong, could not find station.',
-          500
-        );
-        return error;
-      }
+  try {
+    const { stationName , password } = req.body;
 
-      const match = await bcrypt.compare(password, station.password);
-      if(match) {
-        const token = jwt.sign({ sub: station.id }, config.secret);
-        const { password, ...userWithoutPassword } = station;
-        return {
-            ...userWithoutPassword,
-            token
-        };
-      } else {
-        return res.json({success: false, message: 'passwords do not match'});
-      }
+    const station = await Station.findOne({ stationName: stationName });
+    console.log(station);
+    if (!station) {
+        res.status(401).json({ message: 'Station not found' });
+    }else {
+        isPasswordMatch = await bcrypt.compare(password, station.password);
+        if (isPasswordMatch) {
+            const { password, ...userWithoutPassword } = user._doc;
+            res.send({ result: "Success", station: userWithoutPassword });
+        } else {
+            res.send("Password is not correct")
+        }
+    }
+  } catch (error) {
+      res.status(400).send("Invalid credentials")
+  }
 
 }
 
@@ -47,15 +44,7 @@ const saveStation = async (req, res, next) => {
         password,
         province,
         district,
-        town,
-        diesel,
-        dieselArrivedTime,
-        dieselFinishedTime,
-        dieselQuantity,
-        petrol,
-        petrolArrivedTime,
-        petrolFinishedTime,
-        petrolQuantity
+        town
      } = req.body;
 
     let existingStation;
@@ -82,18 +71,18 @@ const saveStation = async (req, res, next) => {
     const newStation = new Station({
         stationid: uuid(),  
         stationName,
-        password,
+        password : hashedPassword,
         province,
         district,
         town,
-        diesel,
-        dieselArrivedTime,
-        dieselFinishedTime,
-        dieselQuantity,
-        petrol,
-        petrolArrivedTime,
-        petrolFinishedTime,
-        petrolQuantity
+        diesel : false,
+        dieselArrivedTime : "",
+        dieselFinishedTime : "",
+        dieselQuantity : "",
+        petrol : false,
+        petrolArrivedTime : "",
+        petrolFinishedTime : "",
+        petrolQuantity : ""
     });
 
     try {
@@ -148,7 +137,73 @@ const getStationByID = async (req, res) => {
       });
 }
 
+const updateFuelQuantity = async (req, res, next) => {
+
+  const { stationid,fuelType,pumpVolume } = req.body;
+  const station = await Station.findOne({ stationid: stationid});
+  if(fuelType == "Petrol"){
+    const restPetrolQuentity = parseFloat(station.petrolQuantity) - parseFloat(pumpVolume);
+    console.log(restPetrolQuentity);
+
+    try {
+      const session = await mongoose.startSession();
+      session.startTransaction();
+      const log = await Station.findOneAndUpdate(
+          {
+              stationid: stationid
+          },
+          {
+              petrolQuantity: restPetrolQuentity
+          },
+          {
+              new: true,
+              upsert: true
+          }
+      );
+      await session.commitTransaction();
+      res.status(201).json({ data: log });
+    } catch (err) {
+          const error = new HttpError(
+              'Error occured while logging details. Please try again.',
+              500
+          );
+          return next(error);
+    }
+  }else{
+    const restDieselQuentity = parseFloat(station.dieselQuantity) - parseFloat(pumpVolume);
+    console.log(restDieselQuentity);
+
+    try {
+      const session = await mongoose.startSession();
+      session.startTransaction();
+      const log = await Station.findOneAndUpdate(
+          {
+              stationid: stationid
+          },
+          {
+              dieselQuantity: restPetrolQuentity
+          },
+          {
+              new: true,
+              upsert: true
+          }
+      );
+      await session.commitTransaction();
+      res.status(201).json({ data: log });
+    } catch (err) {
+          const error = new HttpError(
+              'Error occured while logging details. Please try again.',
+              500
+          );
+          return next(error);
+    }
+  }
+
+  res.send("fail");
+};
+
 exports.authenticateStation = authenticateStation;
 exports.saveStation = saveStation;
 exports.getAllStationsByLocation = getAllStationsByLocation;
 exports.getStationByID = getStationByID;
+exports.updateFuelQuantity = updateFuelQuantity;

@@ -8,30 +8,27 @@ const HttpError = require('../models/http-error');
 const User = require('../schemas/user-schema');
 const config = require('../config.json');
 
-const authenticate = async ({ email, password }) => {
-    let user = null;
-    try{
-        user = await User.findOne({ email: email });
-      } catch(err) {
-        const error = new HttpError(
-          'Something went wrong, could not find user.',
-          500
-        );
-        return error;
-      }
+const authenticate = async (req, res) => {
+  try {
+      const { email , password } = req.body;
 
-      const match = await bcrypt.compare(password, user.password);
-      if(match) {
-        const token = jwt.sign({ sub: user.id }, config.secret);
-        const { password, ...userWithoutPassword } = user;
-        return {
-            ...userWithoutPassword,
-            token
-        };
-      } else {
-        return res.json({success: false, message: 'passwords do not match'});
+      const user = await User.findOne({ email: email });
+      console.log(user);
+      if (!user) {
+          res.status(401).json({ message: 'User not found' });
+      }else {
+          isPasswordMatch = await bcrypt.compare(password, user.password);
+          console.log(isPasswordMatch);
+          if (isPasswordMatch) {
+              const { password, ...userWithoutPassword } = user._doc;
+              res.send({ result: "Success", user: userWithoutPassword });
+          } else {
+              res.send("Password is not correct")
+          }
       }
-
+    } catch (error) {
+        res.status(400).send("Invalid credentials")
+    }
 }
 
 const saveUser = async (req, res, next) => {
@@ -88,7 +85,7 @@ const saveUser = async (req, res, next) => {
         userid: uuid(),
         name,
         email,
-        password,
+        password : hashedPassword,
         vehicleType,
         vehicleNumber,
         fuelType
@@ -98,6 +95,7 @@ const saveUser = async (req, res, next) => {
         const session = await mongoose.startSession();
         session.startTransaction();
         await newUser.save({ session: session });
+
         await session.commitTransaction();
     } catch (err) {
         const error = new HttpError(
@@ -106,6 +104,8 @@ const saveUser = async (req, res, next) => {
         );
         return next(error);
     }
+    // const message = "Please Chech Your Email."
+    // await sendEmail(newUser.email, "Verify Email", message);
 
     res.status(201).json({ User: saveUser });
 };

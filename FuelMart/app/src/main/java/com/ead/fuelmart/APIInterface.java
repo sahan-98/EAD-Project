@@ -1,6 +1,8 @@
 package com.ead.fuelmart;
 
+
 import com.ead.fuelmart.model.Admin;
+import com.ead.fuelmart.model.AuthUser;
 import com.ead.fuelmart.model.Station;
 import com.ead.fuelmart.model.User;
 
@@ -17,6 +19,7 @@ public interface APIInterface {
     Call<User> createUser(@Body User user);
 
 
+
     @GET("/api/v1/stations/{district}/{town}")
     Call<Station> doGetStationList(@Path(value="district", encoded=true) String district, @Path(value="town", encoded=true) String town);
 
@@ -25,6 +28,18 @@ public interface APIInterface {
 
     @GET("/api/v1/admin/count/{id}")
     Call<Admin> doGetStationQue(@Path(value="id", encoded=true)String id);
+    
+    @POST("/api/v1/users/auth")
+    Call<AuthUser> AuthUser(@Body AuthUser user);
+
+    @POST("/api/v1/stations/signup")
+    Call<Station> createStation(@Body Station station);
+
+//    @POST("/api/v1/users/signup")
+//    Call<User> AuthUser(@Body User user);
+//
+//    @GET("/api/v1/users/:id")
+//    Call<User> getUserById();
 
 //    @GET("/api/users?")
 //    Call<UserList> doGetUserList(@Query("page") String page);
