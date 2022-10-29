@@ -23,43 +23,43 @@ public final class ActivityAdminSignUpBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
-  public final Button buttonSignUp2;
+  public final Button buttonStationSignUp;
 
   @NonNull
-  public final Spinner spinnerVehicleType2;
+  public final Spinner spinnerStationDistrict;
 
   @NonNull
-  public final Spinner spinnerVehicleType3;
+  public final Spinner spinnerStationProvince;
 
   @NonNull
-  public final Spinner spinnerVehicleType4;
+  public final Spinner spinnerStationTown;
 
   @NonNull
-  public final EditText textUserName;
+  public final EditText textStationRePassword;
 
   @NonNull
-  public final EditText textUserPassword;
-
-  @NonNull
-  public final EditText textUserRePassword;
+  public final EditText textStationSignUpPassword;
 
   @NonNull
   public final TextView textView4;
 
+  @NonNull
+  public final EditText textstationName;
+
   private ActivityAdminSignUpBinding(@NonNull ConstraintLayout rootView,
-      @NonNull Button buttonSignUp2, @NonNull Spinner spinnerVehicleType2,
-      @NonNull Spinner spinnerVehicleType3, @NonNull Spinner spinnerVehicleType4,
-      @NonNull EditText textUserName, @NonNull EditText textUserPassword,
-      @NonNull EditText textUserRePassword, @NonNull TextView textView4) {
+      @NonNull Button buttonStationSignUp, @NonNull Spinner spinnerStationDistrict,
+      @NonNull Spinner spinnerStationProvince, @NonNull Spinner spinnerStationTown,
+      @NonNull EditText textStationRePassword, @NonNull EditText textStationSignUpPassword,
+      @NonNull TextView textView4, @NonNull EditText textstationName) {
     this.rootView = rootView;
-    this.buttonSignUp2 = buttonSignUp2;
-    this.spinnerVehicleType2 = spinnerVehicleType2;
-    this.spinnerVehicleType3 = spinnerVehicleType3;
-    this.spinnerVehicleType4 = spinnerVehicleType4;
-    this.textUserName = textUserName;
-    this.textUserPassword = textUserPassword;
-    this.textUserRePassword = textUserRePassword;
+    this.buttonStationSignUp = buttonStationSignUp;
+    this.spinnerStationDistrict = spinnerStationDistrict;
+    this.spinnerStationProvince = spinnerStationProvince;
+    this.spinnerStationTown = spinnerStationTown;
+    this.textStationRePassword = textStationRePassword;
+    this.textStationSignUpPassword = textStationSignUpPassword;
     this.textView4 = textView4;
+    this.textstationName = textstationName;
   }
 
   @Override
@@ -89,45 +89,39 @@ public final class ActivityAdminSignUpBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.buttonSignUp2;
-      Button buttonSignUp2 = ViewBindings.findChildViewById(rootView, id);
-      if (buttonSignUp2 == null) {
+      id = R.id.buttonStationSignUp;
+      Button buttonStationSignUp = ViewBindings.findChildViewById(rootView, id);
+      if (buttonStationSignUp == null) {
         break missingId;
       }
 
-      id = R.id.spinnerVehicleType2;
-      Spinner spinnerVehicleType2 = ViewBindings.findChildViewById(rootView, id);
-      if (spinnerVehicleType2 == null) {
+      id = R.id.spinnerStationDistrict;
+      Spinner spinnerStationDistrict = ViewBindings.findChildViewById(rootView, id);
+      if (spinnerStationDistrict == null) {
         break missingId;
       }
 
-      id = R.id.spinnerVehicleType3;
-      Spinner spinnerVehicleType3 = ViewBindings.findChildViewById(rootView, id);
-      if (spinnerVehicleType3 == null) {
+      id = R.id.spinnerStationProvince;
+      Spinner spinnerStationProvince = ViewBindings.findChildViewById(rootView, id);
+      if (spinnerStationProvince == null) {
         break missingId;
       }
 
-      id = R.id.spinnerVehicleType4;
-      Spinner spinnerVehicleType4 = ViewBindings.findChildViewById(rootView, id);
-      if (spinnerVehicleType4 == null) {
+      id = R.id.spinnerStationTown;
+      Spinner spinnerStationTown = ViewBindings.findChildViewById(rootView, id);
+      if (spinnerStationTown == null) {
         break missingId;
       }
 
-      id = R.id.textUserName;
-      EditText textUserName = ViewBindings.findChildViewById(rootView, id);
-      if (textUserName == null) {
+      id = R.id.textStationRePassword;
+      EditText textStationRePassword = ViewBindings.findChildViewById(rootView, id);
+      if (textStationRePassword == null) {
         break missingId;
       }
 
-      id = R.id.textUserPassword;
-      EditText textUserPassword = ViewBindings.findChildViewById(rootView, id);
-      if (textUserPassword == null) {
-        break missingId;
-      }
-
-      id = R.id.textUserRePassword;
-      EditText textUserRePassword = ViewBindings.findChildViewById(rootView, id);
-      if (textUserRePassword == null) {
+      id = R.id.textStationSignUpPassword;
+      EditText textStationSignUpPassword = ViewBindings.findChildViewById(rootView, id);
+      if (textStationSignUpPassword == null) {
         break missingId;
       }
 
@@ -137,9 +131,15 @@ public final class ActivityAdminSignUpBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityAdminSignUpBinding((ConstraintLayout) rootView, buttonSignUp2,
-          spinnerVehicleType2, spinnerVehicleType3, spinnerVehicleType4, textUserName,
-          textUserPassword, textUserRePassword, textView4);
+      id = R.id.textstationName;
+      EditText textstationName = ViewBindings.findChildViewById(rootView, id);
+      if (textstationName == null) {
+        break missingId;
+      }
+
+      return new ActivityAdminSignUpBinding((ConstraintLayout) rootView, buttonStationSignUp,
+          spinnerStationDistrict, spinnerStationProvince, spinnerStationTown, textStationRePassword,
+          textStationSignUpPassword, textView4, textstationName);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
