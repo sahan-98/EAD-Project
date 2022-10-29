@@ -9,17 +9,18 @@
 
     <Button
         android:id="@+id/AddQue"
-        android:layout_width="217dp"
-        android:layout_height="45dp"
+        android:layout_width="161dp"
+        android:layout_height="41dp"
         android:background="@drawable/rounded_corners"
         android:text="Add Queue"
         android:textColor="#090501"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.577"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.931" />
+        app:layout_constraintVertical_bias="0.899" />
 
     <TextView
         android:id="@+id/textPetrol"
@@ -57,8 +58,8 @@
         android:id="@+id/textView2"
         android:layout_width="100dp"
         android:layout_height="30dp"
-        android:background="@color/teal_700"
-        android:text="Available"
+        android:background="@drawable/rounded_corners"
+        android:text="Availablity"
         android:textAlignment="center"
         android:textColor="#050505"
         android:textSize="20sp"
@@ -73,46 +74,44 @@
         android:id="@+id/textView6"
         android:layout_width="100dp"
         android:layout_height="30dp"
-        android:background="@color/teal_700"
-        android:text="Available"
+        android:background="@drawable/rounded_corners"
+        android:text="Availability"
         android:textAlignment="center"
         android:textColor="#050505"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.186"
+        app:layout_constraintHorizontal_bias="0.247"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.569" />
+        app:layout_constraintVertical_bias="0.567" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/textAvDiesel"
         android:layout_width="120dp"
         android:layout_height="31dp"
-        android:background="#B51212"
-        android:text="Not Available"
+        android:background="#938A8A"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.848"
+        app:layout_constraintHorizontal_bias="0.769"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.568" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/textAvPetrol"
         android:layout_width="120dp"
         android:layout_height="31dp"
-        android:background="#B51212"
-        android:text="Not Available"
+        android:background="#938A8A"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.821"
+        app:layout_constraintHorizontal_bias="0.769"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.165" />
@@ -139,6 +138,6 @@
         app:layout_constraintHorizontal_bias="0.528"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.677" />
+        app:layout_constraintVertical_bias="0.704" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
