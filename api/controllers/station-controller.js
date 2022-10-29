@@ -44,15 +44,7 @@ const saveStation = async (req, res, next) => {
         password,
         province,
         district,
-        town,
-        diesel,
-        dieselArrivedTime,
-        dieselFinishedTime,
-        dieselQuantity,
-        petrol,
-        petrolArrivedTime,
-        petrolFinishedTime,
-        petrolQuantity
+        town
      } = req.body;
 
     let existingStation;
@@ -83,14 +75,14 @@ const saveStation = async (req, res, next) => {
         province,
         district,
         town,
-        diesel,
-        dieselArrivedTime,
-        dieselFinishedTime,
-        dieselQuantity,
-        petrol,
-        petrolArrivedTime,
-        petrolFinishedTime,
-        petrolQuantity
+        diesel : false,
+        dieselArrivedTime : "",
+        dieselFinishedTime : "",
+        dieselQuantity : "",
+        petrol : false,
+        petrolArrivedTime : "",
+        petrolFinishedTime : "",
+        petrolQuantity : ""
     });
 
     try {

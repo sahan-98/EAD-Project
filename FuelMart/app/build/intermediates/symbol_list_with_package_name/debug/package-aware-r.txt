@@ -2614,6 +2614,8 @@ drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
 drawable edit_text_border
+drawable fuelmart
+drawable ic_action_name
 drawable ic_clock_black_24dp
 drawable ic_keyboard_black_24dp
 drawable ic_launcher_background
@@ -2819,9 +2821,9 @@ id buttonPanel
 id buttonSignIn1
 id buttonSignUp
 id buttonSignUp1
-id buttonSignUp2
 id buttonStationMaster
 id buttonStationSignIn
+id buttonStationSignUp
 id buttonVehicleOwner
 id cache_measures
 id callMeasure
@@ -2945,6 +2947,7 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
+id imageView
 id immediateStop
 id included
 id indeterminate
@@ -3126,11 +3129,11 @@ id spacer
 id special_effects_controller_view_tag
 id spinnerDistrict
 id spinnerFuelType
+id spinnerStationDistrict
+id spinnerStationProvince
+id spinnerStationTown
 id spinnerTown
 id spinnerVehicleType
-id spinnerVehicleType2
-id spinnerVehicleType3
-id spinnerVehicleType4
 id spline
 id split_action_bar
 id spread
@@ -3178,10 +3181,9 @@ id textSpacerNoTitle
 id textStart
 id textStation
 id textStationPassword
+id textStationRePassword
+id textStationSignUpPassword
 id textTop
-id textUserName
-id textUserPassword
-id textUserRePassword
 id textView
 id textView10
 id textView11
@@ -3203,6 +3205,7 @@ id textinput_helper_text
 id textinput_placeholder
 id textinput_prefix_text
 id textinput_suffix_text
+id textstationName
 id time
 id title
 id titleDividerNoCustom
@@ -3454,6 +3457,7 @@ layout show_pretol_que_dpage
 layout support_simple_spinner_dropdown_item
 menu menu_main
 mipmap ic_launcher
+mipmap ic_launcher_foreground
 mipmap ic_launcher_round
 navigation nav_graph
 navigation nav_graph2

@@ -3,7 +3,7 @@ const router = express.Router();
 
 const { saveStation, authenticateStation,getAllStationsByLocation,getStationByID } = require('../controllers/station-controller');
 
-router.post('/auth', [], auth);
+router.post('/auth', [], authenticateStation);
 router.post('/signup', [], saveStation);
 router.get('/:district/:city',[], getAllStationsByLocation);
 router.get('/:id',[], getStationByID);

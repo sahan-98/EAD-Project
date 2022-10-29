@@ -29,8 +29,6 @@ public class SignInActivity extends AppCompatActivity {
     private AppBarConfiguration appBarConfiguration;
     private ActivitySignInBinding binding;
 
-    private String BASE_URL = "http://127.0.0.1:4000/";
-
     Button SignInButton;
     TextView DisplayText;
     EditText EmailDataField;
@@ -85,7 +83,6 @@ public class SignInActivity extends AppCompatActivity {
                                 Intent intent = new Intent(context,FilterPage.class);
                                 startActivity(intent);
                                 intent.putExtra("email", user1.email);
-
                             }
 
                             @Override
