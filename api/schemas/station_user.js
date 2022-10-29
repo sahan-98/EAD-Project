@@ -6,9 +6,9 @@ const userStationSchema = new mongoose.Schema({
     arrivedTime: { type: String, required: [true, 'arrived Time is required'] },
     departTime: { type: String, required: [true, 'depart Time is required'] },
     pumpStatus: { type: Boolean, required: [true, 'pump Status Type is required'] },
-    user: [{ userId: { type: String, required: [true, 'user Id is required'] },
+    user: { userId: { type: String, required: [true, 'user Id is required'] },
              vehicleType: { type: String, required: [true, 'vehicle Type is required'] },
-             fuelType: { type: String, required: [true, 'fuel Type is required'] } }]
+             fuelType: { type: String, required: [true, 'fuel Type is required'] } }
 })
 
 module.exports =  mongoose.model('user_stations', userStationSchema);

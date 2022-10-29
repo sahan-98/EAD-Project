@@ -11,7 +11,8 @@ const auth = (req, res, next) => {
 
 router.post('/auth', [], auth);
 router.post('/signup', [], saveStation);
-router.get('/:district/:city',[], getAllStationsByLocation);
+
 router.get('/:id',[], getStationByID);
+router.get('/:district/:city',[], getAllStationsByLocation);
 
 module.exports = router;
