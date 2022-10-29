@@ -137,7 +137,73 @@ const getStationByID = async (req, res) => {
       });
 }
 
+const updateFuelQuantity = async (req, res, next) => {
+
+  const { stationid,fuelType,pumpVolume } = req.body;
+  const station = await Station.findOne({ stationid: stationid});
+  if(fuelType == "Petrol"){
+    const restPetrolQuentity = parseFloat(station.petrolQuantity) - parseFloat(pumpVolume);
+    console.log(restPetrolQuentity);
+
+    try {
+      const session = await mongoose.startSession();
+      session.startTransaction();
+      const log = await Station.findOneAndUpdate(
+          {
+              stationid: stationid
+          },
+          {
+              petrolQuantity: restPetrolQuentity
+          },
+          {
+              new: true,
+              upsert: true
+          }
+      );
+      await session.commitTransaction();
+      res.status(201).json({ data: log });
+    } catch (err) {
+          const error = new HttpError(
+              'Error occured while logging details. Please try again.',
+              500
+          );
+          return next(error);
+    }
+  }else{
+    const restDieselQuentity = parseFloat(station.dieselQuantity) - parseFloat(pumpVolume);
+    console.log(restDieselQuentity);
+
+    try {
+      const session = await mongoose.startSession();
+      session.startTransaction();
+      const log = await Station.findOneAndUpdate(
+          {
+              stationid: stationid
+          },
+          {
+              dieselQuantity: restPetrolQuentity
+          },
+          {
+              new: true,
+              upsert: true
+          }
+      );
+      await session.commitTransaction();
+      res.status(201).json({ data: log });
+    } catch (err) {
+          const error = new HttpError(
+              'Error occured while logging details. Please try again.',
+              500
+          );
+          return next(error);
+    }
+  }
+
+  res.send("fail");
+};
+
 exports.authenticateStation = authenticateStation;
 exports.saveStation = saveStation;
 exports.getAllStationsByLocation = getAllStationsByLocation;
 exports.getStationByID = getStationByID;
+exports.updateFuelQuantity = updateFuelQuantity;
