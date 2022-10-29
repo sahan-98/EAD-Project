@@ -21,29 +21,29 @@ const countVehicleType = async (req, res) => {
         console.log("ZXZXZX>",UserStationList)
 
         UserStationList.map(station => {
-            if(station.user.fuelType === 'Petrol') {
+            if(station.fuelType === 'Petrol') {
                  if(station.arrivalStatus === true) {
-                    if(station.user.vehicleType === 'bicycle') {
+                    if(station.vehicleType === 'bicycle') {
                         totalArivalBycicles++;
                     }
-                    else if((station.user.vehicleType === 'Other Vehicle')) {
+                    else if((station.vehicleType === 'Other Vehicle')) {
                         totalArivalPOtherVehicles++;
                     }
-                    else if((station.user.vehicleType === 'Threewheel')) {
+                    else if((station.vehicleType === 'Threewheel')) {
                         totalArivalThreewheels++;
                     }
                  }
                 
              }
-             else if(station.user.fuelType === 'Diesel') {
+             else if(station.fuelType === 'Diesel') {
                  if(station.arrivalStatus === 'Arrived') {
-                    if(station.user.vehicleType === 'Lorry') {
+                    if(station.vehicleType === 'Lorry') {
                         totalArivalLorries++;
                     }
-                    else if((station.user.vehicleType === 'Other Vehicle')) {
+                    else if((station.vehicleType === 'Other Vehicle')) {
                         totalArivalDOtherVehicles++;
                     }
-                    else if((station.user.vehicleType === 'Bus')) {
+                    else if((station.vehicleType === 'Bus')) {
                          totalArivalBuses++;
                     }
                  }
