@@ -66,6 +66,8 @@ public class SignUpActivity extends AppCompatActivity implements AdapterView.OnI
         rePass= (EditText) findViewById(R.id.TextUserRePassword);
         vehicleNumber = (EditText) findViewById(R.id.TextVehicleNumber);
 
+        final String[] userid = new String[1];
+
         SignUpButton = (Button) findViewById(R.id.buttonSignUp);
         SignUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,8 +92,11 @@ public class SignUpActivity extends AppCompatActivity implements AdapterView.OnI
                             @Override
                             public void onResponse(Call<User> call, Response<User> response) {
                                 User user1 = response.body();
-                                Toast.makeText(getApplicationContext(), user1.name + " " + user1.email , Toast.LENGTH_SHORT).show();
+                                Intent intent1 = new Intent(String.valueOf(this));
+                                startActivity(intent1);
                             }
+
+
 
                             @Override
                             public void onFailure(Call<User> call, Throwable t) {

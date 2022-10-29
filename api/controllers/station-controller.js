@@ -9,28 +9,25 @@ const Station = require('../schemas/station-schema');
 const config = require('../config.json');
 
 const authenticateStation = async ({ stationName, password }) => {
-    let station = null;
-    try{
-        station = await Station.findOne({ stationName: stationName });
-      } catch(err) {
-        const error = new HttpError(
-          'Something went wrong, could not find station.',
-          500
-        );
-        return error;
-      }
+  try {
+    const { stationName , password } = req.body;
 
-      const match = await bcrypt.compare(password, station.password);
-      if(match) {
-        const token = jwt.sign({ sub: station.id }, config.secret);
-        const { password, ...userWithoutPassword } = station;
-        return {
-            ...userWithoutPassword,
-            token
-        };
-      } else {
-        return res.json({success: false, message: 'passwords do not match'});
-      }
+    const station = await Station.findOne({ stationName: stationName });
+    console.log(station);
+    if (!station) {
+        res.status(401).json({ message: 'Station not found' });
+    }else {
+        isPasswordMatch = await bcrypt.compare(password, station.password);
+        if (isPasswordMatch) {
+            const { password, ...userWithoutPassword } = user._doc;
+            res.send({ result: "Success", station: userWithoutPassword });
+        } else {
+            res.send("Password is not correct")
+        }
+    }
+  } catch (error) {
+      res.status(400).send("Invalid credentials")
+  }
 
 }
 
@@ -82,7 +79,7 @@ const saveStation = async (req, res, next) => {
     const newStation = new Station({
         stationid: uuid(),  
         stationName,
-        password,
+        password : hashedPassword,
         province,
         district,
         town,
