@@ -9,6 +9,7 @@ const userStationSchema = new mongoose.Schema({
     email: { type: String, required: [true, 'user Id is required'] },
     vehicleType: { type: String, required: [true, 'vehicle Type is required'] },
     fuelType: { type: String, required: [true, 'fuel Type is required'] }
+
 })
 
 
