@@ -26,6 +26,7 @@ public class DetailsPage extends AppCompatActivity {
     TextView textView1,textView2,textView3,textView4,textView5,textView6,textView7,textView8;
     private String id;
     Integer textp1,textp2,textp3,textd1,textd2,textd3;
+    String tp1;
 
     APIInterface apiInterface;
 
@@ -104,6 +105,10 @@ public class DetailsPage extends AppCompatActivity {
                  textd2 = admin.totalArivalBuses;
                  textd3 = admin.totalArivalDOtherVehicles;
 
+                 System.out.println(textp1);
+
+                 tp1 = String.valueOf(textp1);
+
 //                textView3.setText(textp1);
 //                textView4.setText(textp2);
 //                textView5.setText(textp3);
@@ -149,9 +154,9 @@ public class DetailsPage extends AppCompatActivity {
             }
         });
 
-        textView3.setText("" +textp1);
-        textView4.setText("" +textp2);
-        textView5.setText("" +textp3);
+        textView3.setText(tp1);
+//        textView4.setText(Integer.toString(textp2));
+//        textView5.setText(Integer.toString(textp3));
 
 
         dialog.show();
@@ -169,9 +174,9 @@ public class DetailsPage extends AppCompatActivity {
             }
         });
 
-        textView6.setText("" +textd1);
-        textView7.setText("" +textd3);
-        textView8.setText("" +textd3);
+//        textView6.setText(Integer.toString(textd1));
+//        textView7.setText(Integer.toString(textd2));
+//        textView8.setText(Integer.toString(textd3));
 
         dialog.show();
     }
