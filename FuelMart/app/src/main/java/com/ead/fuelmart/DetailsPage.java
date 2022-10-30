@@ -102,22 +102,22 @@ public class DetailsPage extends AppCompatActivity {
             }
         });
 
-        Call<Admin> call1 = apiInterface.doGetStationQue(id);
-        call1.enqueue(new Callback<Admin>() {
-            @Override
-            public void onResponse(Call<Admin> call, Response<Admin> response) {
-                Admin admin = response.body();
-
-                 textp1 = admin.totalArivalBycicles;
-                 textp2 = admin.totalArivalPOtherVehicles;
-                 textp3 = admin.totalArivalThreewheels;
-                 textd1 = admin.totalArivalLorries;
-                 textd2 = admin.totalArivalBuses;
-                 textd3 = admin.totalArivalDOtherVehicles;
-
-                 System.out.println(textp1);
-
-                 tp1 = String.valueOf(textp1);
+//        Call<Admin> call1 = apiInterface.doGetStationQue(id);
+//        call1.enqueue(new Callback<Admin>() {
+//            @Override
+//            public void onResponse(Call<Admin> call, Response<Admin> response) {
+//                Admin admin = response.body();
+//
+//                 textp1 = admin.totalArivalBycicles;
+//                 textp2 = admin.totalArivalPOtherVehicles;
+//                 textp3 = admin.totalArivalThreewheels;
+//                 textd1 = admin.totalArivalLorries;
+//                 textd2 = admin.totalArivalBuses;
+//                 textd3 = admin.totalArivalDOtherVehicles;
+//
+//                 System.out.println(textp1);
+//
+//                 tp1 = String.valueOf(textp1);
 
 //                textView3.setText(textp1);
 //                textView4.setText(textp2);
@@ -127,13 +127,13 @@ public class DetailsPage extends AppCompatActivity {
 //                textView8.setText(textd3);
 
 
-            }
-
-            @Override
-            public void onFailure(Call<Admin> call, Throwable t) {
-
-            }
-        });
+//            }
+//
+//            @Override
+//            public void onFailure(Call<Admin> call, Throwable t) {
+//
+//            }
+//        });
 
 
 
@@ -164,7 +164,7 @@ public class DetailsPage extends AppCompatActivity {
             }
         });
 
-        textView3.setText(tp1);
+//        textView3.setText(tp1);
 //        textView4.setText(Integer.toString(textp2));
 //        textView5.setText(Integer.toString(textp3));
 
