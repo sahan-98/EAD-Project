@@ -20,11 +20,14 @@ drawable bg_spinner
 drawable edit_text_border
 drawable fuelmart
 drawable ic_action_name
+drawable ic_baseline_arrow_back_ios_24
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ic_station_icon
 drawable ic_user_icon
+drawable logo
 drawable rounded_corners
+drawable time
 id AddQue
 id DCloseButton
 id DieselButton
@@ -40,6 +43,9 @@ id TextUserRePassword
 id TextVehicleNumber
 id action_settings
 id appBarLayout2
+id btn_exit
+id btn_full
+id btn_pumpSave
 id button
 id buttonAdminSignUp
 id buttonSignIn1
@@ -53,11 +59,15 @@ id constraintLayout
 id coordinatorLayout
 id coordinatorLayout2
 id end
+id exitHeading
 id imageView
+id img_time
+id img_vol
 id listView
 id nav_graph
 id nav_graph2
 id nav_host_fragment_content_main
+id pumped_vol
 id spinnerDistrict
 id spinnerFuelType
 id spinnerStationDistrict
@@ -88,6 +98,7 @@ id textView8
 id textView9
 id textstationName
 id toolbar
+id txt_req_vol
 layout activity_admin_sign_in
 layout activity_admin_sign_up
 layout activity_details_page
@@ -97,7 +108,9 @@ layout activity_sign_up
 layout content_main
 layout content_sign_up
 layout filter_page
+layout full_or_exit
 layout layout_show_pretol_queue
+layout pump_fuel_volume
 layout show_diesel_que_dpage
 layout show_pretol_que_dpage
 menu menu_main
@@ -109,6 +122,10 @@ navigation nav_graph2
 string Fuel_dropdown_name
 string action_settings
 string app_name
+string btn_exit
+string btn_full
+string btn_pump
+string exitHeading
 string first_fragment_label
 string hello_blank_fragment
 string hello_first_fragment
@@ -118,6 +135,7 @@ string location_province_dropdown_name
 string location_town_dropdown_name
 string next
 string previous
+string req_vol
 string second_fragment_label
 string signUp_text
 string sign_up

@@ -2616,6 +2616,7 @@ drawable design_snackbar_background
 drawable edit_text_border
 drawable fuelmart
 drawable ic_action_name
+drawable ic_baseline_arrow_back_ios_24
 drawable ic_clock_black_24dp
 drawable ic_keyboard_black_24dp
 drawable ic_launcher_background
@@ -2629,6 +2630,7 @@ drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_station_icon
 drawable ic_user_icon
+drawable logo
 drawable m3_appbar_background
 drawable m3_popupmenu_background_overlay
 drawable m3_radiobutton_ripple
@@ -2699,6 +2701,7 @@ drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable rounded_corners
 drawable test_level_drawable
+drawable time
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
 id ALT
@@ -2815,6 +2818,9 @@ id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
+id btn_exit
+id btn_full
+id btn_pumpSave
 id button
 id buttonAdminSignUp
 id buttonPanel
@@ -2906,6 +2912,7 @@ id end
 id endToStart
 id enterAlways
 id enterAlwaysCollapsed
+id exitHeading
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
@@ -2948,6 +2955,8 @@ id ignore
 id ignoreRequest
 id image
 id imageView
+id img_time
+id img_vol
 id immediateStop
 id included
 id indeterminate
@@ -3074,6 +3083,7 @@ id postLayout
 id pressed
 id progress_circular
 id progress_horizontal
+id pumped_vol
 id radio
 id ratio
 id rectangles
@@ -3223,6 +3233,7 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
+id txt_req_vol
 id unchecked
 id uniform
 id unlabeled
@@ -3394,6 +3405,7 @@ layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout filter_page
+layout full_or_exit
 layout layout_show_pretol_queue
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
@@ -3449,6 +3461,7 @@ layout notification_template_custom_big
 layout notification_template_icon_group
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout pump_fuel_volume
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
@@ -3500,12 +3513,16 @@ string bottomsheet_action_expand
 string bottomsheet_action_expand_halfway
 string bottomsheet_drag_handle_clicked
 string bottomsheet_drag_handle_content_description
+string btn_exit
+string btn_full
+string btn_pump
 string character_counter_content_description
 string character_counter_overflowed_content_description
 string character_counter_pattern
 string clear_text_end_icon_content_description
 string error_a11y_label
 string error_icon_content_description
+string exitHeading
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
@@ -3615,6 +3632,7 @@ string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
 string previous
+string req_vol
 string search_menu_title
 string second_fragment_label
 string signUp_text

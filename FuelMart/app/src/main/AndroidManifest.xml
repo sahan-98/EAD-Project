@@ -31,6 +31,20 @@
                 android:value="" />
         </activity>
         <activity
+            android:name=".PumpVolume"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".FullOrExit"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".SignInActivity"
             android:exported="false">
             <meta-data

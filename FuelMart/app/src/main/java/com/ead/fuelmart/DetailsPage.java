@@ -3,6 +3,7 @@ package com.ead.fuelmart;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -11,6 +12,7 @@ public class DetailsPage extends AppCompatActivity {
 
     private Button petrolQueueBtn;
     private Button dieselQueueBtn;
+    private Button addQue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +21,15 @@ public class DetailsPage extends AppCompatActivity {
 
         petrolQueueBtn = findViewById(R.id.PetrolButton);
         dieselQueueBtn = findViewById(R.id.DieselButton);
+        addQue = findViewById(R.id.AddQue);
+
+        addQue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(DetailsPage.this,FullOrExit.class);
+                startActivity(intent);
+            }
+        });
 
         petrolQueueBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,4 +75,9 @@ public class DetailsPage extends AppCompatActivity {
 
         dialog.show();
     }
+
+
+
+
+
 }
