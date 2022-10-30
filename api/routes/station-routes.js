@@ -5,8 +5,9 @@ const { saveStation, authenticateStation,getAllStationsByLocation,getStationByID
 
 router.post('/auth', [], authenticateStation);
 router.post('/signup', [], saveStation);
-router.get('/:district/:city',[], getAllStationsByLocation);
 router.get('/:id',[], getStationByID);
+router.get('/:district/:city',[], getAllStationsByLocation);
 router.put('/updateFuelQuantity', [], updateFuelQuantity);
+
 
 module.exports = router;

@@ -29,8 +29,14 @@ drawable logo
 drawable rounded_corners
 drawable time
 id AddQue
+id D1textView
+id D2textView
+id D3textView
 id DCloseButton
 id DieselButton
+id P1textView
+id P2textView
+id P3textView
 id PCloseButton
 id PetrolButton
 id TextStationName1
@@ -76,6 +82,8 @@ id spinnerStationTown
 id spinnerTown
 id spinnerVehicleType
 id start
+id textAvDiesel
+id textAvPetrol
 id textDiesel
 id textDistrict
 id textPetrol

@@ -33,12 +33,14 @@
     <string name="req_vol">Requested Volume</string>
 
     <string-array name="WesternDistricts">
+        <item>Select District</item>
         <item>Colombo</item>
         <item>Gampaha</item>
         <item>Kaluthara</item>
     </string-array>
 
     <string-array name="GampahaTowm">
+        <item>Select City</item>
         <item>Gampaha</item>
         <item>Kadawatha</item>
         <item>Kaleniya</item>

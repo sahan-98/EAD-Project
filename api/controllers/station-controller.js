@@ -129,7 +129,7 @@ const getStationByID = async (req, res) => {
           if (!data) {
               res.status(404).send({ message: "Fuel station not found. Check ID: " + stationid });
           } else {
-              res.status(200).send({ data: data });
+              res.status(200).send(data);
           }
       })
       .catch(err => {
