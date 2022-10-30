@@ -2706,11 +2706,17 @@ id AddQue
 id BOTTOM_END
 id BOTTOM_START
 id CTRL
+id D1textView
+id D2textView
+id D3textView
 id DCloseButton
 id DieselButton
 id FUNCTION
 id META
 id NO_DEBUG
+id P1textView
+id P2textView
+id P3textView
 id PCloseButton
 id PetrolButton
 id SHIFT
@@ -3171,6 +3177,8 @@ id tag_unhandled_key_listeners
 id tag_window_insets_animation_callback
 id text
 id text2
+id textAvDiesel
+id textAvPetrol
 id textDiesel
 id textDistrict
 id textEnd

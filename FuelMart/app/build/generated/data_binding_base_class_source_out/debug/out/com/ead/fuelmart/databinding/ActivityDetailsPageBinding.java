@@ -30,6 +30,12 @@ public final class ActivityDetailsPageBinding implements ViewBinding {
   public final Button PetrolButton;
 
   @NonNull
+  public final TextView textAvDiesel;
+
+  @NonNull
+  public final TextView textAvPetrol;
+
+  @NonNull
   public final TextView textDiesel;
 
   @NonNull
@@ -39,27 +45,21 @@ public final class ActivityDetailsPageBinding implements ViewBinding {
   public final TextView textView2;
 
   @NonNull
-  public final TextView textView3;
-
-  @NonNull
-  public final TextView textView4;
-
-  @NonNull
   public final TextView textView6;
 
   private ActivityDetailsPageBinding(@NonNull ConstraintLayout rootView, @NonNull Button AddQue,
-      @NonNull Button DieselButton, @NonNull Button PetrolButton, @NonNull TextView textDiesel,
-      @NonNull TextView textPetrol, @NonNull TextView textView2, @NonNull TextView textView3,
-      @NonNull TextView textView4, @NonNull TextView textView6) {
+      @NonNull Button DieselButton, @NonNull Button PetrolButton, @NonNull TextView textAvDiesel,
+      @NonNull TextView textAvPetrol, @NonNull TextView textDiesel, @NonNull TextView textPetrol,
+      @NonNull TextView textView2, @NonNull TextView textView6) {
     this.rootView = rootView;
     this.AddQue = AddQue;
     this.DieselButton = DieselButton;
     this.PetrolButton = PetrolButton;
+    this.textAvDiesel = textAvDiesel;
+    this.textAvPetrol = textAvPetrol;
     this.textDiesel = textDiesel;
     this.textPetrol = textPetrol;
     this.textView2 = textView2;
-    this.textView3 = textView3;
-    this.textView4 = textView4;
     this.textView6 = textView6;
   }
 
@@ -108,6 +108,18 @@ public final class ActivityDetailsPageBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.textAvDiesel;
+      TextView textAvDiesel = ViewBindings.findChildViewById(rootView, id);
+      if (textAvDiesel == null) {
+        break missingId;
+      }
+
+      id = R.id.textAvPetrol;
+      TextView textAvPetrol = ViewBindings.findChildViewById(rootView, id);
+      if (textAvPetrol == null) {
+        break missingId;
+      }
+
       id = R.id.textDiesel;
       TextView textDiesel = ViewBindings.findChildViewById(rootView, id);
       if (textDiesel == null) {
@@ -126,18 +138,6 @@ public final class ActivityDetailsPageBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.textView3;
-      TextView textView3 = ViewBindings.findChildViewById(rootView, id);
-      if (textView3 == null) {
-        break missingId;
-      }
-
-      id = R.id.textView4;
-      TextView textView4 = ViewBindings.findChildViewById(rootView, id);
-      if (textView4 == null) {
-        break missingId;
-      }
-
       id = R.id.textView6;
       TextView textView6 = ViewBindings.findChildViewById(rootView, id);
       if (textView6 == null) {
@@ -145,7 +145,7 @@ public final class ActivityDetailsPageBinding implements ViewBinding {
       }
 
       return new ActivityDetailsPageBinding((ConstraintLayout) rootView, AddQue, DieselButton,
-          PetrolButton, textDiesel, textPetrol, textView2, textView3, textView4, textView6);
+          PetrolButton, textAvDiesel, textAvPetrol, textDiesel, textPetrol, textView2, textView6);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

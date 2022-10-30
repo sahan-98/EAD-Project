@@ -21,16 +21,19 @@ public final class ShowPretolQueDpageBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
+  public final TextView P1textView;
+
+  @NonNull
+  public final TextView P2textView;
+
+  @NonNull
+  public final TextView P3textView;
+
+  @NonNull
   public final Button PCloseButton;
 
   @NonNull
   public final ConstraintLayout constraintLayout;
-
-  @NonNull
-  public final TextView textView10;
-
-  @NonNull
-  public final TextView textView11;
 
   @NonNull
   public final TextView textView12;
@@ -44,24 +47,21 @@ public final class ShowPretolQueDpageBinding implements ViewBinding {
   @NonNull
   public final TextView textView8;
 
-  @NonNull
-  public final TextView textView9;
-
   private ShowPretolQueDpageBinding(@NonNull ConstraintLayout rootView,
+      @NonNull TextView P1textView, @NonNull TextView P2textView, @NonNull TextView P3textView,
       @NonNull Button PCloseButton, @NonNull ConstraintLayout constraintLayout,
-      @NonNull TextView textView10, @NonNull TextView textView11, @NonNull TextView textView12,
-      @NonNull TextView textView5, @NonNull TextView textView7, @NonNull TextView textView8,
-      @NonNull TextView textView9) {
+      @NonNull TextView textView12, @NonNull TextView textView5, @NonNull TextView textView7,
+      @NonNull TextView textView8) {
     this.rootView = rootView;
+    this.P1textView = P1textView;
+    this.P2textView = P2textView;
+    this.P3textView = P3textView;
     this.PCloseButton = PCloseButton;
     this.constraintLayout = constraintLayout;
-    this.textView10 = textView10;
-    this.textView11 = textView11;
     this.textView12 = textView12;
     this.textView5 = textView5;
     this.textView7 = textView7;
     this.textView8 = textView8;
-    this.textView9 = textView9;
   }
 
   @Override
@@ -91,6 +91,24 @@ public final class ShowPretolQueDpageBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.P1textView;
+      TextView P1textView = ViewBindings.findChildViewById(rootView, id);
+      if (P1textView == null) {
+        break missingId;
+      }
+
+      id = R.id.P2textView;
+      TextView P2textView = ViewBindings.findChildViewById(rootView, id);
+      if (P2textView == null) {
+        break missingId;
+      }
+
+      id = R.id.P3textView;
+      TextView P3textView = ViewBindings.findChildViewById(rootView, id);
+      if (P3textView == null) {
+        break missingId;
+      }
+
       id = R.id.PCloseButton;
       Button PCloseButton = ViewBindings.findChildViewById(rootView, id);
       if (PCloseButton == null) {
@@ -98,18 +116,6 @@ public final class ShowPretolQueDpageBinding implements ViewBinding {
       }
 
       ConstraintLayout constraintLayout = (ConstraintLayout) rootView;
-
-      id = R.id.textView10;
-      TextView textView10 = ViewBindings.findChildViewById(rootView, id);
-      if (textView10 == null) {
-        break missingId;
-      }
-
-      id = R.id.textView11;
-      TextView textView11 = ViewBindings.findChildViewById(rootView, id);
-      if (textView11 == null) {
-        break missingId;
-      }
 
       id = R.id.textView12;
       TextView textView12 = ViewBindings.findChildViewById(rootView, id);
@@ -135,15 +141,8 @@ public final class ShowPretolQueDpageBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.textView9;
-      TextView textView9 = ViewBindings.findChildViewById(rootView, id);
-      if (textView9 == null) {
-        break missingId;
-      }
-
-      return new ShowPretolQueDpageBinding((ConstraintLayout) rootView, PCloseButton,
-          constraintLayout, textView10, textView11, textView12, textView5, textView7, textView8,
-          textView9);
+      return new ShowPretolQueDpageBinding((ConstraintLayout) rootView, P1textView, P2textView,
+          P3textView, PCloseButton, constraintLayout, textView12, textView5, textView7, textView8);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
