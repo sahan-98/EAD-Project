@@ -23,6 +23,7 @@ public class DetailsPage extends AppCompatActivity {
 
     private Button petrolQueueBtn;
     private Button dieselQueueBtn;
+    private Button addQue;
     TextView textView1,textView2,textView3,textView4,textView5,textView6,textView7,textView8;
     private String id;
     Integer textp1,textp2,textp3,textd1,textd2,textd3;
@@ -38,6 +39,15 @@ public class DetailsPage extends AppCompatActivity {
 
         petrolQueueBtn = findViewById(R.id.PetrolButton);
         dieselQueueBtn = findViewById(R.id.DieselButton);
+        addQue = findViewById(R.id.AddQue);
+
+        addQue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(DetailsPage.this,FullOrExit.class);
+                startActivity(intent);
+            }
+        });
         textView1 = findViewById(R.id.textAvPetrol);
         textView2 = findViewById(R.id.textAvDiesel);
 
@@ -92,22 +102,22 @@ public class DetailsPage extends AppCompatActivity {
             }
         });
 
-        Call<Admin> call1 = apiInterface.doGetStationQue(id);
-        call1.enqueue(new Callback<Admin>() {
-            @Override
-            public void onResponse(Call<Admin> call, Response<Admin> response) {
-                Admin admin = response.body();
-
-                 textp1 = admin.totalArivalBycicles;
-                 textp2 = admin.totalArivalPOtherVehicles;
-                 textp3 = admin.totalArivalThreewheels;
-                 textd1 = admin.totalArivalLorries;
-                 textd2 = admin.totalArivalBuses;
-                 textd3 = admin.totalArivalDOtherVehicles;
-
-                 System.out.println(textp1);
-
-                 tp1 = String.valueOf(textp1);
+//        Call<Admin> call1 = apiInterface.doGetStationQue(id);
+//        call1.enqueue(new Callback<Admin>() {
+//            @Override
+//            public void onResponse(Call<Admin> call, Response<Admin> response) {
+//                Admin admin = response.body();
+//
+//                 textp1 = admin.totalArivalBycicles;
+//                 textp2 = admin.totalArivalPOtherVehicles;
+//                 textp3 = admin.totalArivalThreewheels;
+//                 textd1 = admin.totalArivalLorries;
+//                 textd2 = admin.totalArivalBuses;
+//                 textd3 = admin.totalArivalDOtherVehicles;
+//
+//                 System.out.println(textp1);
+//
+//                 tp1 = String.valueOf(textp1);
 
 //                textView3.setText(textp1);
 //                textView4.setText(textp2);
@@ -117,13 +127,13 @@ public class DetailsPage extends AppCompatActivity {
 //                textView8.setText(textd3);
 
 
-            }
-
-            @Override
-            public void onFailure(Call<Admin> call, Throwable t) {
-
-            }
-        });
+//            }
+//
+//            @Override
+//            public void onFailure(Call<Admin> call, Throwable t) {
+//
+//            }
+//        });
 
 
 
@@ -154,7 +164,7 @@ public class DetailsPage extends AppCompatActivity {
             }
         });
 
-        textView3.setText(tp1);
+//        textView3.setText(tp1);
 //        textView4.setText(Integer.toString(textp2));
 //        textView5.setText(Integer.toString(textp3));
 
@@ -180,4 +190,9 @@ public class DetailsPage extends AppCompatActivity {
 
         dialog.show();
     }
+
+
+
+
+
 }

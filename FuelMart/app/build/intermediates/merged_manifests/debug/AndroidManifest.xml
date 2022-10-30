@@ -39,6 +39,20 @@
                 android:value="" />
         </activity>
         <activity
+            android:name="com.ead.fuelmart.PumpVolume"
+            android:exported="false" >
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name="com.ead.fuelmart.FullOrExit"
+            android:exported="false" >
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name="com.ead.fuelmart.SignInActivity"
             android:exported="false" >
             <meta-data

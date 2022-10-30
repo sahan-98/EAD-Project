@@ -26,6 +26,12 @@
 <!--        <item>Sabaragamuwa</item>-->
 <!--    </string-array>-->
 
+    <string name="btn_exit">Exit Without Pump</string>
+    <string name="exitHeading">Are you sure you want to exit from the queue</string>
+    <string name="btn_full">Exit After Pump</string>
+    <string name="btn_pump">Save</string>
+    <string name="req_vol">Requested Volume</string>
+
     <string-array name="WesternDistricts">
         <item>Select District</item>
         <item>Colombo</item>

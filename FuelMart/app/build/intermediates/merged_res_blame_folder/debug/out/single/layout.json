@@ -44,7 +44,15 @@
         "source": "com.ead.fuelmart.app-main-43:/layout/layout_show_pretol_queue.xml"
     },
     {
+        "merged": "com.ead.fuelmart.app-mergeDebugResources-40:/layout/full_or_exit.xml",
+        "source": "com.ead.fuelmart.app-main-43:/layout/full_or_exit.xml"
+    },
+    {
         "merged": "com.ead.fuelmart.app-mergeDebugResources-40:/layout/activity_sign_in.xml",
         "source": "com.ead.fuelmart.app-main-43:/layout/activity_sign_in.xml"
+    },
+    {
+        "merged": "com.ead.fuelmart.app-mergeDebugResources-40:/layout/pump_fuel_volume.xml",
+        "source": "com.ead.fuelmart.app-main-43:/layout/pump_fuel_volume.xml"
     }
 ]

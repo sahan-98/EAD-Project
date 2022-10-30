@@ -61,6 +61,10 @@
     <string name="Fuel_dropdown_name">vehicleTypes</string>
     <string name="action_settings">Settings</string>
     <string name="app_name">FuelMart</string>
+    <string name="btn_exit">Exit Without Pump</string>
+    <string name="btn_full">Exit After Pump</string>
+    <string name="btn_pump">Save</string>
+    <string name="exitHeading">Are you sure you want to exit from the queue</string>
     <string name="first_fragment_label">First Fragment</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="hello_first_fragment">Hello first fragment</string>
@@ -70,6 +74,7 @@
     <string name="location_town_dropdown_name">LocationTown</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
+    <string name="req_vol">Requested Volume</string>
     <string name="second_fragment_label">Second Fragment</string>
     <string name="signUp_text">Don\'t you have an account ?</string>
     <string name="sign_up">Sign Up</string>
