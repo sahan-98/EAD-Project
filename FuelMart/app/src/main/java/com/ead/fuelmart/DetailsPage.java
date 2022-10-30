@@ -149,9 +149,9 @@ public class DetailsPage extends AppCompatActivity {
             }
         });
 
-        textView3.setText(textp1);
-        textView4.setText(textp2);
-        textView5.setText(textp3);
+        textView3.setText("" +textp1);
+        textView4.setText("" +textp2);
+        textView5.setText("" +textp3);
 
 
         dialog.show();
@@ -169,9 +169,9 @@ public class DetailsPage extends AppCompatActivity {
             }
         });
 
-        textView6.setText(textd1);
-        textView7.setText(textd3);
-        textView8.setText(textd3);
+        textView6.setText("" +textd1);
+        textView7.setText("" +textd3);
+        textView8.setText("" +textd3);
 
         dialog.show();
     }

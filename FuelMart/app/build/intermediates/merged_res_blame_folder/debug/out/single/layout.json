@@ -4,47 +4,51 @@
         "source": "com.ead.fuelmart.app-main-43:/layout/show_diesel_que_dpage.xml"
     },
     {
-        "merged": "com.ead.fuelmart.app-mergeDebugResources-40:/layout/content_main.xml",
-        "source": "com.ead.fuelmart.app-main-43:/layout/content_main.xml"
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\7.4\\com.ead.fuelmart.app-mergeDebugResources-40:\\layout\\activity_admin_sign_in.xml",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\7.4\\com.ead.fuelmart.app-main-43:\\layout\\activity_admin_sign_in.xml"
     },
     {
-        "merged": "com.ead.fuelmart.app-mergeDebugResources-40:/layout/show_pretol_que_dpage.xml",
-        "source": "com.ead.fuelmart.app-main-43:/layout/show_pretol_que_dpage.xml"
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\7.4\\com.ead.fuelmart.app-mergeDebugResources-40:\\layout\\content_sign_up.xml",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\7.4\\com.ead.fuelmart.app-main-43:\\layout\\content_sign_up.xml"
     },
     {
-        "merged": "com.ead.fuelmart.app-mergeDebugResources-40:/layout/activity_details_page.xml",
-        "source": "com.ead.fuelmart.app-main-43:/layout/activity_details_page.xml"
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\7.4\\com.ead.fuelmart.app-mergeDebugResources-40:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\7.4\\com.ead.fuelmart.app-main-43:\\layout\\activity_main.xml"
     },
     {
-        "merged": "com.ead.fuelmart.app-mergeDebugResources-40:/layout/content_sign_up.xml",
-        "source": "com.ead.fuelmart.app-main-43:/layout/content_sign_up.xml"
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\7.4\\com.ead.fuelmart.app-mergeDebugResources-40:\\layout\\activity_admin_sign_up.xml",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\7.4\\com.ead.fuelmart.app-main-43:\\layout\\activity_admin_sign_up.xml"
     },
     {
-        "merged": "com.ead.fuelmart.app-mergeDebugResources-40:/layout/activity_main.xml",
-        "source": "com.ead.fuelmart.app-main-43:/layout/activity_main.xml"
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\7.4\\com.ead.fuelmart.app-mergeDebugResources-40:\\layout\\activity_details_page.xml",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\7.4\\com.ead.fuelmart.app-main-43:\\layout\\activity_details_page.xml"
     },
     {
-        "merged": "com.ead.fuelmart.app-mergeDebugResources-40:/layout/filter_page.xml",
-        "source": "com.ead.fuelmart.app-main-43:/layout/filter_page.xml"
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\7.4\\com.ead.fuelmart.app-mergeDebugResources-40:\\layout\\content_main.xml",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\7.4\\com.ead.fuelmart.app-main-43:\\layout\\content_main.xml"
     },
     {
-        "merged": "com.ead.fuelmart.app-mergeDebugResources-40:/layout/activity_admin_sign_in.xml",
-        "source": "com.ead.fuelmart.app-main-43:/layout/activity_admin_sign_in.xml"
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\7.4\\com.ead.fuelmart.app-mergeDebugResources-40:\\layout\\filter_page.xml",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\7.4\\com.ead.fuelmart.app-main-43:\\layout\\filter_page.xml"
     },
     {
-        "merged": "com.ead.fuelmart.app-mergeDebugResources-40:/layout/activity_admin_sign_up.xml",
-        "source": "com.ead.fuelmart.app-main-43:/layout/activity_admin_sign_up.xml"
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\7.4\\com.ead.fuelmart.app-mergeDebugResources-40:\\layout\\layout_show_pretol_queue.xml",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\7.4\\com.ead.fuelmart.app-main-43:\\layout\\layout_show_pretol_queue.xml"
     },
     {
-        "merged": "com.ead.fuelmart.app-mergeDebugResources-40:/layout/activity_sign_up.xml",
-        "source": "com.ead.fuelmart.app-main-43:/layout/activity_sign_up.xml"
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\7.4\\com.ead.fuelmart.app-mergeDebugResources-40:\\layout\\activity_sign_up.xml",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\7.4\\com.ead.fuelmart.app-main-43:\\layout\\activity_sign_up.xml"
     },
     {
-        "merged": "com.ead.fuelmart.app-mergeDebugResources-40:/layout/layout_show_pretol_queue.xml",
-        "source": "com.ead.fuelmart.app-main-43:/layout/layout_show_pretol_queue.xml"
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\7.4\\com.ead.fuelmart.app-mergeDebugResources-40:\\layout\\show_diesel_que_dpage.xml",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\7.4\\com.ead.fuelmart.app-main-43:\\layout\\show_diesel_que_dpage.xml"
     },
     {
-        "merged": "com.ead.fuelmart.app-mergeDebugResources-40:/layout/activity_sign_in.xml",
-        "source": "com.ead.fuelmart.app-main-43:/layout/activity_sign_in.xml"
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\7.4\\com.ead.fuelmart.app-mergeDebugResources-40:\\layout\\show_pretol_que_dpage.xml",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\7.4\\com.ead.fuelmart.app-main-43:\\layout\\show_pretol_que_dpage.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\7.4\\com.ead.fuelmart.app-mergeDebugResources-40:\\layout\\activity_sign_in.xml",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\7.4\\com.ead.fuelmart.app-main-43:\\layout\\activity_sign_in.xml"
     }
 ]

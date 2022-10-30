@@ -82,7 +82,7 @@ public class SignInActivity extends AppCompatActivity {
                                 AuthUser user1 = response.body();
                                 Intent intent = new Intent(context,FilterPage.class);
                                 startActivity(intent);
-                                intent.putExtra("email", user1.email);
+//                                intent.putExtra("email", user1.email);
                             }
 
                             @Override
